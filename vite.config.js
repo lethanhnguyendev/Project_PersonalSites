@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/Project_PersonalSites/',
+  base: '/',
   build: {
     rollupOptions: {
       input: [
