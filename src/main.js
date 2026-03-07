@@ -3,7 +3,7 @@ import { getHeader, getFooter } from './components.js';
 
 // Set favicon globally so you don't need to repeat it per page
 function ensureFavicon() {
-  const href = '/logo.svg';
+  const href = import.meta.env.BASE_URL + 'logo.svg';
   let link = document.querySelector('link[rel="icon"]');
   if (!link) {
     link = document.createElement('link');

@@ -8,28 +8,30 @@ export const PROFILE = {
   github: 'https://github.com/lethanhnguyendev',
 };
 
+const BASE = import.meta.env.BASE_URL;
+
 export const NAV_ITEMS = [
-  { href: '/index.html', label: 'Home', id: 'home' },
+  { href: 'index.html', label: 'Home', id: 'home' },
   {
     href: '#',
     label: 'Profile Career',
     id: 'profile-career',
     children: [
-      { href: '/ProfileCareer/software-eng.html', label: 'Information Technology', id: 'it' },
-      { href: '/ProfileCareer/engineering.html', label: 'Engineering', id: 'engineering' },
+      { href: 'ProfileCareer/software-eng.html', label: 'Information Technology', id: 'it' },
+      { href: 'ProfileCareer/engineering.html', label: 'Engineering', id: 'engineering' },
     ],
   },
-  { href: '/portfolio.html', label: 'Portfolio', id: 'portfolio' },
-  { href: '/contact.html', label: 'Contact', id: 'contact' },
+  { href: 'portfolio.html', label: 'Portfolio', id: 'portfolio' },
+  { href: 'contact.html', label: 'Contact', id: 'contact' },
 ];
 
 export function getHeader(currentPageId = '') {
   return `
     <header class="navbar min-h-[72px] bg-white/90 backdrop-blur border-b border-neutral-200 sticky top-0 z-40">
       <div class="navbar-start">
-        <a href="/index.html" class="btn btn-ghost px-2 normal-case text-xl font-bold text-primary flex items-center gap-3">
+        <a href="${BASE}index.html" class="btn btn-ghost px-2 normal-case text-xl font-bold text-primary flex items-center gap-3">
           <img
-            src="/logo.svg"
+            src="${BASE}logo.svg"
             alt="${PROFILE.name} logo"
             class="h-10 w-10 md:h-12 md:w-12 object-contain"
           />
@@ -52,7 +54,7 @@ export function getHeader(currentPageId = '') {
                         .map(
                           (child) => `
                             <li>
-                              <a href="${child.href}" class="${
+                              <a href="${BASE}${child.href}" class="${
                                 currentPageId === child.id ? 'active font-semibold' : ''
                               } text-sm md:text-base">
                                 ${child.label}
@@ -69,7 +71,7 @@ export function getHeader(currentPageId = '') {
 
             return `
               <li>
-                <a href="${item.href}" class="${
+                <a href="${BASE}${item.href}" class="${
                   currentPageId === item.id ? 'active font-semibold' : ''
                 } text-sm md:text-base px-3">
                   ${item.label}
@@ -80,7 +82,7 @@ export function getHeader(currentPageId = '') {
         </ul>
       </div>
       <div class="navbar-end">
-        <a href="contact.html" class="btn btn-primary btn-sm md:btn-md">Contact</a>
+        <a href="${BASE}contact.html" class="btn btn-primary btn-sm md:btn-md">Contact</a>
       </div>
     </header>
   `;
