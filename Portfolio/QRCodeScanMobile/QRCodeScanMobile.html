@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barcode Scanner Inventory — Tom Website - Portfolio</title>
+  </head>
+  <body data-page="portfolio" class="page-container bg-white">
+    <div id="site-header"></div>
+
+    <main class="page-main">
+      <!-- Page header -->
+      <section class="min-h-[220px] py-16 bg-neutral-100 flex items-center">
+        <div class="container mx-auto px-4">
+          <a href="../../portfolio.html" class="text-primary hover:underline text-sm md:text-base mb-4 inline-block">← Portfolio</a>
+          <h1 class="text-3xl md:text-4xl font-bold mb-3">Barcode Scanner Inventory</h1>
+          <p class="text-lg opacity-80 max-w-2xl mb-4">
+            A cross-platform mobile application (Android | iOS) built with <strong>Xamarin.Forms</strong> for scanning QR codes and barcodes, managing inventory items, and exporting professional Excel reports. Designed for warehouse management, asset tracking, and inventory control—perfect for teams who need to capture and report data on the go.
+          </p>
+          <p class="text-sm opacity-70"><strong>Release date:</strong> July 7, 2023</p>
+        </div>
+      </section>
+
+      <!-- Hero image -->
+      <section class="py-8 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <img src="ReadmeImages/BACKGROUND.png" alt="Barcode Scanner Inventory" class="w-full rounded-lg border border-neutral-200 shadow-md mb-4" loading="eager" />
+          <p class="text-center">
+            <img src="ReadmeImages/icon.png" alt="App Icon" class="inline-block w-24 h-24 rounded-xl border border-neutral-200 shadow" loading="lazy" />
+          </p>
+          <div class="flex flex-wrap gap-4 justify-center mt-8">
+            <a href="https://play.google.com/store/apps/details?id=com.companyname.qrcodescanmobile" target="_blank" rel="noreferrer" class="btn btn-primary gap-2">
+              Download on Google Play
+            </a>
+            <a href="https://github.com/lethanhnguyendev/QRCodeScanMobile" target="_blank" rel="noreferrer" class="btn btn-outline border-2 border-neutral-300 hover:border-primary/50 gap-2">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Features</h2>
+          <div class="space-y-6 opacity-90">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Barcode & QR Code Scanning</h3>
+              <ul class="list-disc list-inside space-y-1 ml-2">
+                <li>Fast and accurate scanning using ZXing library</li>
+                <li>Support for QR codes and various barcode formats</li>
+                <li>Haptic feedback (vibration) and sound feedback on successful scan</li>
+                <li>Real-time camera preview with optimized scanning options</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Inventory Management</h3>
+              <ul class="list-disc list-inside space-y-1 ml-2">
+                <li><strong>Add items</strong> with barcode, item name, amount, and user attribution</li>
+                <li><strong>View scanned items</strong> in a clean, organized collection view</li>
+                <li><strong>Delete individual items</strong> with tap-to-delete interaction</li>
+                <li><strong>Clear all items</strong> with confirmation dialog</li>
+                <li><strong>Local storage</strong> — data persists on device using JSON files</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Excel Report Export</h3>
+              <ul class="list-disc list-inside space-y-1 ml-2">
+                <li>Export all scanned items to professionally formatted Excel (.xlsx) files</li>
+                <li>Includes: serial number, date/time, barcode, item name, amount, and person who scanned</li>
+                <li>One-tap share to email, cloud storage, or messaging apps</li>
+                <li>Built with EPPlus for reliable Excel generation</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Multi-Language Support</h3>
+              <ul class="list-disc list-inside space-y-1 ml-2">
+                <li><strong>English</strong> and <strong>Vietnamese (Tiếng Việt)</strong> localization</li>
+                <li>Language preference saved and restored on app launch</li>
+                <li>Full UI translation via resource files (RESX)</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Settings & Permissions</h3>
+              <ul class="list-disc list-inside space-y-1 ml-2">
+                <li>Camera permission management with visual status indicators</li>
+                <li>Network status monitoring</li>
+                <li>One-tap permission request for camera, vibration, and network</li>
+                <li>Links to developer website and Google Play channel</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Production-Ready Integrations</h3>
+              <ul class="list-disc list-inside space-y-1 ml-2">
+                <li><strong>Microsoft App Center</strong> — Analytics and crash reporting for monitoring app health</li>
+                <li><strong>Xamarin.Essentials</strong> — Cross-platform APIs for permissions, storage, sharing, and device info</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Use Cases -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">Use Cases</h2>
+          <ul class="list-disc list-inside space-y-2 opacity-90">
+            <li><strong>Warehouse & Logistics</strong> — Quick inventory counting and item tracking</li>
+            <li><strong>Retail</strong> — Product scanning and stock management</li>
+            <li><strong>Event Management</strong> — Attendee/asset check-in with QR codes</li>
+            <li><strong>Asset Management</strong> — Track equipment and devices by barcode</li>
+            <li><strong>Small Business</strong> — Simple, offline-capable inventory without complex backend</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Technology Stack -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Technology Stack</h2>
+          <div class="overflow-x-auto">
+            <table class="table table-zebra">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Technology</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Framework</strong></td><td>Xamarin.Forms 5.0</td></tr>
+                <tr><td><strong>Language</strong></td><td>C# / .NET Standard 2.0</td></tr>
+                <tr><td><strong>Barcode Scanning</strong></td><td>ZXing.Net.Mobile</td></tr>
+                <tr><td><strong>Excel Export</strong></td><td>EPPlus</td></tr>
+                <tr><td><strong>UI Components</strong></td><td>DevExpress XamarinForms (CollectionView, Editors)</td></tr>
+                <tr><td><strong>Analytics & Crashes</strong></td><td>Microsoft App Center</td></tr>
+                <tr><td><strong>Utilities</strong></td><td>Xamarin.Essentials, Newtonsoft.Json, Xamarin.CommunityToolkit</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Impact & Achievements -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Impact & Achievements</h2>
+          <p class="opacity-90 mb-4">This application has been deployed in real-world business environments with measurable results:</p>
+          <div class="overflow-x-auto">
+            <table class="table table-zebra">
+              <thead>
+                <tr>
+                  <th>Achievement</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Enterprise deployment</strong></td><td>A <strong>premium private version</strong> for enterprises—with direct data sync to cloud database—was adopted by <strong>Cantho Power Electric Company (Vietnam)</strong> for product inventory management.</td></tr>
+                <tr><td><strong>Scale</strong></td><td>Warehouse staff used the app to inventory <strong>over 10,000 electrical devices</strong> in 2024.</td></tr>
+                <tr><td><strong>Efficiency</strong></td><td>Inventory time was reduced to <strong>1/5</strong> compared to manual counting methods.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screenshots -->
+      <section class="py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-8">Screenshots</h2>
+
+          <div class="space-y-12">
+            <!-- App Preview: Loading, Settings, Add Item -->
+            <div>
+              <h3 class="text-xl font-semibold mb-2">App Preview</h3>
+              <p class="opacity-80 text-sm mb-4">Loading Page • Settings Page • Add Item Page</p>
+              <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                <img src="ReadmeImages/z4453081405278_f528f3ea04e79b37a9eff05b189daaa5.jpg" alt="Loading Page" class="rounded-lg border border-neutral-200 shadow-md w-48 object-cover" loading="lazy" />
+                <img src="ReadmeImages/z4453081392093_dd92aa40f0ca39243b264ed72d81a827.jpg" alt="Settings Page" class="rounded-lg border border-neutral-200 shadow-md w-48 object-cover" loading="lazy" />
+                <img src="ReadmeImages/z4453081395131_9133eda989b72432b422c4398590a269.jpg" alt="Add Item Page" class="rounded-lg border border-neutral-200 shadow-md w-48 object-cover" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- Scanning Feature -->
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Scanning Feature: Barcode / QR Code</h3>
+              <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                <img src="ReadmeImages/z4454126225780_77e376a1cdb316c288f4c5e61f848bfb.jpg" alt="Scanning barcode" class="rounded-lg border border-neutral-200 shadow-md w-48 object-cover" loading="lazy" />
+                <img src="ReadmeImages/z4454126263266_83387cf2e071d6a7009ed49ba5bc1020.jpg" alt="Scanning QR code" class="rounded-lg border border-neutral-200 shadow-md w-48 object-cover" loading="lazy" />
+                <img src="ReadmeImages/z4453081444640_9ef93e74fc3c1d11524061e5014c4b6.jpg" alt="Scan result" class="rounded-lg border border-neutral-200 shadow-md w-48 object-cover" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- Items Scanned • Inventory View -->
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Items Scanned • Inventory View</h3>
+              <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                <img src="ReadmeImages/z4454135097873_fca45c0650c5ecc10e148b9cf0eb3cf1.jpg" alt="Items scanned" class="rounded-lg border border-neutral-200 shadow-md w-48 object-cover" loading="lazy" />
+                <img src="ReadmeImages/z4453081432410_764de3134de03e1bc22d60baaa727ea3.jpg" alt="Inventory view" class="rounded-lg border border-neutral-200 shadow-md w-48 object-cover" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- Export to Excel -->
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Export to Excel Feature</h3>
+              <img src="ReadmeImages/z4454141069336_6180f1948d5e68cd1699cea67a23da2a.jpg" alt="Export to Excel" class="w-full max-w-2xl rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+            </div>
+
+            <!-- Multi-language -->
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Multi-language: English & Vietnamese</h3>
+              <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                <img src="ReadmeImages/z4453081447509_7cee016b27be5af65038bfb210ab8931.jpg" alt="English" class="rounded-lg border border-neutral-200 shadow-md w-48 object-cover" loading="lazy" />
+                <img src="ReadmeImages/z4453190195278_1ca9942dd84aadeb916c38022558fd03.jpg" alt="Vietnamese" class="rounded-lg border border-neutral-200 shadow-md w-48 object-cover" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Back to portfolio -->
+      <section class="py-8 bg-neutral-50">
+        <div class="container mx-auto px-4 text-center">
+          <a href="../../portfolio.html" class="btn btn-primary">← Back to Portfolio</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
