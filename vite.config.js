@@ -12,6 +12,7 @@ export default defineConfig({
         'ProfileCareer/engineering.html',
         'Portfolio/SmartRetail/SmartRetail.html',
         'Portfolio/QRCodeScanMobile/QRCodeScanMobile.html',
+        'Portfolio/AdelaideMetroRealtime/AdelaideMetroRealtime.html',
       ],
     },
   },

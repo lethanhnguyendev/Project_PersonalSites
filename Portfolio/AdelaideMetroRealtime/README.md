@@ -112,4 +112,4 @@ Through this project, the following skills were developed:
 
 ---
 
-**Full project report:** [LeThanhNguyen_Cloudcomputing_Project.pdf](https://drive.google.com/file/d/12E44juVm0CFiSQ5SwKjy9VYUaUarlHmM/view?usp=sharing)
+**Full project report:** [LeThanhNguyen_Cloudcomputing_Project.pdf](LeThanhNguyen_Cloudcomputing_Project.pdf)
