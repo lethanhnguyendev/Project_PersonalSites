@@ -7,7 +7,7 @@ The system designs and implements a **cloud-based data pipeline** to collect, pr
 
 The solution integrates **Microsoft Azure cloud services and Node-RED** to automate data ingestion, monitoring, reporting, and visualization, allowing stakeholders to track vehicle locations and analyse transport operations in real time.
 
-![System overview](Images_demo/1.Diagram.svg.png)
+![System overview](Images_demo/Diagram-svg.png)
 *Figure 1: System architecture overview*
 
 ---
@@ -37,7 +37,7 @@ Key components include:
 * **Analytics Layer:** Tableau dashboards
 * **Web Interface:** Azure App Service
 
-![Overall cloud services](Images_demo/5.Overall%20loud%20services%203.png)
+![Overall cloud services](Images_demo/Overall-loud-services-3.png)
 *Figure 2: Overall cloud services*
 
 ---
@@ -74,10 +74,10 @@ Key components include:
 * Tableau
 * Node-RED Dashboard
 
-![Tableau Dashboard](Images_demo/30.%20Dashboard%20Tableua%201.png)
+![Tableau Dashboard](Images_demo/Dashboard-Tableua-1.png)
 *Figure 3: Tableau dashboard for transport analytics*
 
-![Quick visual](Images_demo/51.%20Quick%20visual%2015.png)
+![Quick visual](Images_demo/Quick-visual-15.png)
 *Figure 4: Node-RED / quick visualization*
 
 ---
@@ -86,7 +86,7 @@ Key components include:
 
 ### Real-Time Data Storage using Azure Cosmos DB
 
-![Azure Storage service](Images_demo/27.20.%20AZURE%20STORAGE%20service%208.png)
+![Azure Storage service](Images_demo/27-20-AZURE-STORAGE-service-8.png)
 *Figure 5: Azure Storage / Cosmos DB*
 
 ---
@@ -95,7 +95,7 @@ Key components include:
 
 Backend APIs were implemented using **Azure Functions** to retrieve and process real-time vehicle data from the Adelaide Metro API.
 
-![IDE – Adelaide Metro API](Images_demo/7.%20IDE%20solve%20the%20api%20from%20adelaide%20metro%202.png)
+![IDE – Adelaide Metro API](Images_demo/IDE-solve-the-api-from-adelaide-metro-2.png)
 *Figure 6: IDE – solving the Adelaide Metro API*
 
 ---
@@ -112,4 +112,4 @@ Through this project, the following skills were developed:
 
 ---
 
-**Full project report:** [Le Thanh Nguyen_Cloudcomputing_Project.pdf](Le%20Thanh%20Nguyen_Cloudcomputing_Project.pdf)
+**Full project report:** [LeThanhNguyen_Cloudcomputing_Project.pdf](https://drive.google.com/file/d/12E44juVm0CFiSQ5SwKjy9VYUaUarlHmM/view?usp=sharing)
