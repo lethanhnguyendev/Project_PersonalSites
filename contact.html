@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tom Website - Contact</title>
+  </head>
+  <body data-page="contact" class="page-container bg-white">
+    <div id="site-header"></div>
+
+    <main class="page-main">
+      <!-- Page header -->
+      <section class="min-h-[220px] py-16 bg-neutral-100 flex items-center">
+        <div class="container mx-auto px-4 text-left">
+          <h1 class="text-3xl md:text-4xl font-bold mb-3">Contact</h1>
+          <p class="text-lg opacity-80 max-w-2xl">
+            Feel free to reach out for opportunities, collaborations, or questions.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact content -->
+      <section class="py-16">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <div class="grid md:grid-cols-2 gap-12">
+            <!-- Contact info -->
+            <div class="space-y-4">
+              <h2 class="text-2xl font-bold text-primary mb-4">Contact information</h2>
+              <p class="opacity-80">
+                You can reach out to me using the contact details below.
+              </p>
+              <div class="space-y-3 text-sm md:text-base">
+                <div>
+                  <h3 class="font-semibold">Email</h3>
+                  <a href="mailto:lethanhnguyen0706@gmail.com" class="link link-primary">lethanhnguyen0706@gmail.com</a>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Phone</h3>
+                  <a href="tel:+61452615968" class="link link-primary">+61 452 615 968</a>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Location</h3>
+                  <p>Based in South Australia</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Simple form -->
+            <div>
+              <h2 class="text-2xl font-bold text-primary mb-4">Send a message</h2>
+              <form class="space-y-4" id="contact-form">
+                <div class="form-control">
+                  <label class="label" for="name">
+                    <span class="label-text">Name *</span>
+                  </label>
+                  <input id="name" name="name" type="text" placeholder="Your name" class="input input-bordered w-full" required />
+                </div>
+                <div class="form-control">
+                  <label class="label" for="email">
+                    <span class="label-text">Email *</span>
+                  </label>
+                  <input id="email" name="email" type="email" placeholder="you@example.com" class="input input-bordered w-full" required />
+                </div>
+                <div class="form-control">
+                  <label class="label" for="message">
+                    <span class="label-text">Message *</span>
+                  </label>
+                  <textarea id="message" name="message" rows="4" placeholder="Write your message..." class="textarea textarea-bordered w-full" required></textarea>
+                </div>
+                <div class="form-control pt-2">
+                  <button type="submit" class="btn btn-primary w-full">Send</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you! Your message has been recorded locally (no backend yet).');
+      });
+    </script>
+  </body>
+</html>
+

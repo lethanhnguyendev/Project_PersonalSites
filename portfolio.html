@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tom Website - Portfolio</title>
+  </head>
+  <body data-page="portfolio" class="page-container bg-white">
+    <div id="site-header"></div>
+
+    <main class="page-main">
+      <!-- Page header -->
+      <section class="min-h-[220px] py-16 bg-neutral-100 flex items-center">
+        <div class="container mx-auto px-4">
+          <h1 class="text-3xl md:text-4xl font-bold mb-3">Portfolio</h1>
+          <p class="text-lg opacity-80 max-w-2xl">
+            This page will showcase your projects, case studies, and achievements.
+          </p>
+        </div>
+      </section>
+
+      <!-- Portfolio grid -->
+      <section class="py-16">
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Smart Retail -->
+            <a href="Portfolio/SmartRetail.html" class="card bg-base-100 shadow-md border border-neutral-200 hover:shadow-lg hover:border-primary/30 transition-all">
+              <figure class="px-4 pt-4">
+                <img src="Portfolio/SmartRetail/Demo_Images/Screenshot-2026-03-07-220330.png" alt="Smart Retail — Transaction management" class="rounded-lg object-cover h-40 w-full" loading="lazy" />
+              </figure>
+              <div class="card-body">
+                <h2 class="card-title text-lg">Smart Retail</h2>
+                <p class="opacity-80 text-sm">
+                  Mini Sales Management System — Desktop app for small retail: POS, table service, transactions, Excel reports. C#, WinForms, DevExpress, EPPlus.
+                </p>
+                <span class="text-primary text-sm font-medium">View project →</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+

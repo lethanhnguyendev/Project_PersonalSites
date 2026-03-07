@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #026ca6;
+  --color-primary-content: #ffffff;
+  --color-secondary: #026ca6;
+  --color-secondary-content: #ffffff;
+  --color-base-content: #0e121d;
+}
+
+/* Bright white background theme */
+body {
+  background-color: #ffffff;
+  color: #0e121d;
+}
+
+/* Simple layout helpers for the personal site */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-main {
+  flex: 1;
+}
