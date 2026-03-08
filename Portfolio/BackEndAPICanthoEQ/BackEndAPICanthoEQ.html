@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RESTful API Backend – Electrical Equipment (Can Tho Power) — Tom Website - Portfolio</title>
+  </head>
+  <body data-page="portfolio" class="page-container bg-white">
+    <div id="site-header"></div>
+
+    <main class="page-main">
+      <!-- Page header -->
+      <section class="min-h-[220px] py-16 bg-neutral-100 flex items-center">
+        <div class="container mx-auto px-4">
+          <a href="../../portfolio.html" class="text-primary hover:underline text-sm md:text-base mb-4 inline-block">← Portfolio</a>
+          <h1 class="text-3xl md:text-4xl font-bold mb-3">RESTful API Backend – Electrical Equipment Information in Can Tho Power Company</h1>
+          <p class="text-lg opacity-80 max-w-2xl mb-4">
+            Serverless backend on <strong>Azure Functions</strong> for electrical testing process management at Can Tho Power Corporation (PCCT). Supports the full lifecycle: testing requests, construction & equipment management, file storage, document signing, and SMS notifications. Acts as the infrastructure platform layer for web, mobile, and partner integrations.
+          </p>
+          <p class="text-sm opacity-70"><strong>Context:</strong> Digital transformation — backend API for internal and external applications</p>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">Overview</h2>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-4">
+            The <strong>Electrical Testing Digital Transformation PCCT</strong> system is a serverless backend solution built on <strong>Azure Functions</strong>, serving electrical testing process management for Can Tho Power Corporation (PCCT). The system supports the full lifecycle from accepting testing requests, managing construction projects & equipment, file storage, document signing to customer SMS notifications.
+          </p>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-4">
+            <strong>Data separation architecture:</strong> Uses <strong>SQL Server</strong> and <strong>ASP.NET RESTful API</strong> for internal user management and authentication. After successful authentication, the system calls <strong>Azure Functions</strong> (FunctionApp) to query and store electrical equipment and construction data in <strong>Cosmos DB</strong> – suitable for large data volumes, ensuring performance and scalability.
+          </p>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed">
+            This API Backend serves as a critical infrastructure platform layer, providing the backend platform for other application components (web app, mobile app, partner integrations, etc.) to connect and operate.
+          </p>
+        </div>
+      </section>
+
+      <!-- Key Features -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Main Features</h2>
+          <div class="overflow-x-auto">
+            <table class="table table-zebra">
+              <thead>
+                <tr>
+                  <th>Module</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Construction Management</strong></td><td>CRUD construction projects, basic and advanced search (constructionName, constructionAddress, managementUnit, requestContent, staffName, dateFrom – dateTo), equipment catalog per construction, construction library.</td></tr>
+                <tr><td><strong>Request / Ticket Management</strong></td><td>Testing request registration, CRUD tickets by ID and phone number (partition key), status PENDING → ACCEPTED, processing history, link to construction via TAG.</td></tr>
+                <tr><td><strong>Equipment Management</strong></td><td>CRUD equipment tied to constructionId, test data list (testDataList), equipment library (templates and common data).</td></tr>
+                <tr><td><strong>User Management</strong></td><td>CRUD staff (SQL Server – internal users), login via ASP.NET API (employee ID and password), staff information.</td></tr>
+                <tr><td><strong>File Management</strong></td><td>Upload/download Base64 files in Azure Blob Storage by id, list files in container.</td></tr>
+                <tr><td><strong>Document Signing (KYSO)</strong></td><td>Create digital documents (BBTN, Detailed Calculation, etc.), auto document numbering ({number}/PCCT-KT-{documentType}), multi-turn signing (PENDING SIGNATURE → PENDING RELEASE → RELEASED), query by tag/signer/date/Admin, signature image storage.</td></tr>
+                <tr><td><strong>Customer API</strong></td><td>Public API for partners: query construction by month/year, equipment by constructionId.</td></tr>
+                <tr><td><strong>Utility Services</strong></td><td>Check IP (Viettel), Send SMS via Viettel SOAP API (AMS Branded Messaging).</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screenshots -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Screenshots</h2>
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">System architecture</h3>
+              <img src="Images/Untitled%20Diagram.drawio.png" alt="System architecture diagram" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Figure: System architecture overview</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Development — Visual Studio</h3>
+              <p class="opacity-90 mb-4">TicketService (CreateTicket, GetTicket, UpdateTicket) and Solution Explorer: CONGTRINH, TICKET, THIETBI, USER, FILE, KYSO, CUSTOMERS, Services.</p>
+              <img src="Images/Screenshot%202026-03-08%20193428.png" alt="Visual Studio — TicketService.cs and project structure" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Figure: FunctionApp_ThiNghiemDienPCCT — TicketService and Solution Explorer</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">API services on cloud</h3>
+              <img src="Images/Screenshot%202026-03-08%20210422.png" alt="Services stored on API cloud" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Figure: API services stored on cloud</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Azure Storage — Image files</h3>
+              <img src="Images/Screenshot%202026-03-08%20210645.png" alt="Azure Storage stores image files from API" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Figure: Azure Storage stores image files from API</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Azure Function API — Services</h3>
+              <img src="Images/Screenshot%202026-03-08%20210728.png" alt="Services on Azure Function API" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Figure: Services on Azure Function API</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Stack -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Technology Stack</h2>
+          <div class="overflow-x-auto">
+            <table class="table table-zebra">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Technology</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Runtime</strong></td><td>.NET 8</td></tr>
+                <tr><td><strong>Main backend</strong></td><td>Azure Functions v4 (HTTP Trigger)</td></tr>
+                <tr><td><strong>Auth API</strong></td><td>ASP.NET RESTful API</td></tr>
+                <tr><td><strong>Database</strong></td><td>SQL Server (internal users), Azure Cosmos DB (large data: construction, equipment)</td></tr>
+                <tr><td><strong>File storage</strong></td><td>Azure Blob Storage</td></tr>
+                <tr><td><strong>SMS</strong></td><td>Viettel Bulk SMS (SOAP)</td></tr>
+                <tr><td><strong>JSON</strong></td><td>Newtonsoft.Json</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- System Architecture -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">System Architecture</h2>
+          <p class="opacity-90 mb-4">
+            <strong>ASP.NET API + SQL Server</strong>: Manages internal users, handles login and Bearer Token issuance.<br>
+            <strong>Azure Functions + Cosmos DB</strong>: After authentication, clients call FunctionApp to query and store construction and electrical equipment – leveraging Cosmos DB’s large data handling.<br>
+            <strong>Blob Storage</strong>: Stores files, digital documents, signature images.<br>
+            <strong>Viettel SMS</strong>: Sends SMS notifications.
+          </p>
+          <div class="bg-neutral-100 rounded-lg p-6 border border-neutral-200 overflow-x-auto">
+            <pre class="text-sm whitespace-pre font-mono">┌─────────────────────┐     Bearer Token      ┌─────────────────────────────────┐
+│ ASP.NET API         │ ───────────────────▶  │ Azure Functions (large data)    │
+│ (Authentication &   │                        │ ConstructionAPI │ EquipmentAPI │ …
+│  Internal users)    │                        └─────────────────────────────────┘
+└─────────────────────┘                                         │
+        │                                                       ▼
+        ▼                                              ┌───────────────┐
+┌───────────────┐                                      │ Cosmos DB     │
+│ SQL Server    │                                      │ (Construction,│
+│ (User)        │                                      │  Equipment)   │
+└───────────────┘                                      └───────────────┘</pre>
+          </div>
+          <p class="opacity-90 mt-4"><strong>Layer model:</strong> API Layer (Azure Functions HTTP Trigger – validate Bearer Token, call Service); Service Layer (business logic, Cosmos DB & Blob Storage).</p>
+        </div>
+      </section>
+
+      <!-- Service Overview -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Service Overview</h2>
+          <ul class="list-disc list-inside space-y-2 opacity-90">
+            <li><strong>ConstructionService:</strong> CRUD construction, basic and advanced search with pagination, construction library.</li>
+            <li><strong>TicketService:</strong> CRUD request tickets, management by phone number, delete with Blob container.</li>
+            <li><strong>EquipmentService:</strong> CRUD equipment linked to construction, equipment templates and common data.</li>
+            <li><strong>UserService:</strong> CRUD staff, login (can integrate SQL Server for internal users).</li>
+            <li><strong>FileService:</strong> Upload, download Base64 files, list files by container.</li>
+            <li><strong>SignService (KYSO):</strong> Digital document lifecycle (create, sign, release), multi-condition query, download files and signatures.</li>
+            <li><strong>CustomersService:</strong> Query construction by month/year, equipment by constructionId for public API.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Security -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">Security</h2>
+          <ul class="list-disc list-inside space-y-2 opacity-90">
+            <li><strong>Bearer Token:</strong> Internal APIs use <code>Authorization: Bearer {token}</code> for authentication. Token is issued after successful login via ASP.NET API.</li>
+            <li><strong>Customers API:</strong> No token required, serves public lookup by month/year and constructionId.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Main Data Models -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">Main Data Models</h2>
+          <p class="opacity-90">Construction, Ticket, Equipment, Document (digital document), User.</p>
+        </div>
+      </section>
+
+      <!-- Back to portfolio -->
+      <section class="py-8 bg-neutral-50">
+        <div class="container mx-auto px-4 text-center">
+          <a href="../../portfolio.html" class="btn btn-primary">← Back to Portfolio</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script type="module" src="../../src/main.js"></script>
+  </body>
+</html>

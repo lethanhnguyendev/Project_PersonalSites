@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electrical Equipment Information Management Desktop App — Tom Website - Portfolio</title>
+  </head>
+  <body data-page="portfolio" class="page-container bg-white">
+    <div id="site-header"></div>
+
+    <main class="page-main">
+      <!-- Page header -->
+      <section class="min-h-[220px] py-16 bg-neutral-100 flex items-center">
+        <div class="container mx-auto px-4">
+          <a href="../../portfolio.html" class="text-primary hover:underline text-sm md:text-base mb-4 inline-block">← Portfolio</a>
+          <h1 class="text-3xl md:text-4xl font-bold mb-3">Electrical Equipment Information Management Desktop App</h1>
+          <p class="text-lg opacity-80 max-w-2xl mb-4">
+            Windows desktop application for creating, managing, and exporting electrical testing reports for Can Tho Power Corporation (PCCT). Connects to the <strong>RESTful API Backend</strong> to fetch construction and equipment data, then generates Word (.docx) reports and Excel (.xlsx) exports for testing staff.
+          </p>
+          <p class="text-sm opacity-70"><strong>Context:</strong> Desktop client of the electrical testing digital transformation ecosystem — complements the cloud-based API backend.</p>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">Overview</h2>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-4">
+            <strong>Electrical Equipment Information Management Desktop App</strong> is a Windows desktop application for creating, managing, and exporting electrical testing reports for Can Tho Power Corporation (PCCT). It connects to the <strong>RESTful API Backend</strong> to fetch construction and equipment data, then generates Word (.docx) reports and Excel (.xlsx) exports for testing staff.
+          </p>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed">
+            The application is the <strong>desktop client</strong> of the electrical testing digital transformation ecosystem, complementing the cloud-based API backend. It provides an intuitive interface for field staff to search, manage, confirm test data, and export official reports and certificates.
+          </p>
+        </div>
+      </section>
+
+      <!-- Main Features -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Main Features</h2>
+          <div class="overflow-x-auto">
+            <table class="table table-zebra">
+              <thead>
+                <tr>
+                  <th>Module</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Login</strong></td><td>Authentication via employee ID and password against backend API (UserAPI). Optional save username/password. Loads library data on startup.</td></tr>
+                <tr><td><strong>Search & View</strong></td><td>Query construction by month/year, equipment pending confirmation. DevExpress Grid, search/filter, column customization, footer summary.</td></tr>
+                <tr><td><strong>Manager</strong></td><td>Add/edit construction (name, address, management unit, equipment list, status, staff). Equipment per construction grid. Save via ConstructionAPI and EquipmentAPI.</td></tr>
+                <tr><td><strong>Create Report</strong></td><td>Create test reports (BBTN), inspection reports (BBKD), certificates (GCN). Export to Word (.docx) via DocX. Loads templates from backend storage.</td></tr>
+                <tr><td><strong>Export Data by Month</strong></td><td>Select month/year, query construction and equipment from backend, export to Excel (.xlsx) in bulk via EPPlus. Periodic reporting, backup, analysis.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Stack -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Technology Stack</h2>
+          <div class="overflow-x-auto">
+            <table class="table table-zebra">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Technology</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Language</strong></td><td>C#</td></tr>
+                <tr><td><strong>Framework</strong></td><td>.NET Framework 4.7.2</td></tr>
+                <tr><td><strong>UI</strong></td><td>Windows Forms, DevExpress v22.2 (XtraEditors, XtraGrid, XtraLayout, XtraPrinting)</td></tr>
+                <tr><td><strong>HTTP Client</strong></td><td>System.Net.Http</td></tr>
+                <tr><td><strong>JSON</strong></td><td>Newtonsoft.Json</td></tr>
+                <tr><td><strong>Word export</strong></td><td>DocX (Xceed.Words.NET)</td></tr>
+                <tr><td><strong>Excel export</strong></td><td>EPPlus</td></tr>
+                <tr><td><strong>Backend API</strong></td><td>RESTful API Backend (Can Tho Power)</td></tr>
+                <tr><td><strong>Storage</strong></td><td>Azure Blob Storage (report templates)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- System Architecture -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">System Architecture</h2>
+          <p class="opacity-90">The desktop application connects to and queries data from the <strong>API Backend</strong> of the electrical testing project (RESTful API Backend – Can Tho Power). It sends and receives construction, equipment, user, and file data over HTTP; report templates are loaded from backend storage as needed.</p>
+        </div>
+      </section>
+
+      <!-- Project Structure -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Project Structure</h2>
+          <p class="opacity-90 mb-4"><strong>Views:</strong> Login_Form, Search_Form, Manager_Form, CreateBBTN_Form, ExportDatMonth_Form.</p>
+          <p class="opacity-90 mb-4"><strong>Services:</strong> ConstructionService (ConstructionAPI), EquipmentService (EquipmentAPI), UserService, MediaService, Config, AppSettings, UtilityService.</p>
+          <p class="opacity-90"><strong>Models:</strong> Construction, Equipment, Document (test report), User.</p>
+        </div>
+      </section>
+
+      <!-- Main Data Models -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">Main Data Models</h2>
+          <p class="opacity-90">Construction, Equipment, Document (test report), User.</p>
+        </div>
+      </section>
+
+      <!-- Screenshots -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Screenshots</h2>
+          <p class="opacity-90 mb-6">Screen flow: Login → Search (construction & equipment) → Manager (edit) → Create Report (Word) → Export Data (Excel).</p>
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">1. Login</h3>
+              <img src="Images/Screenshot%202026-03-08%20213719.png" alt="Login — Employee ID and password" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Login screen — Employee ID and password.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">2. Search — Construction list</h3>
+              <img src="Images/Screenshot%202026-03-08%20220022.png" alt="Search — Construction by month/year, equipment list" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Search form — Construction projects by month/year and equipment pending confirmation.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">3. Manage Construction information</h3>
+              <img src="Images/Screenshot%202026-03-08%20213751.png" alt="Manage Construction information" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Manage Construction information.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">4. Manager — Construction and equipment</h3>
+              <img src="Images/Screenshot%202026-03-08%20213758.png" alt="Manager — Add/edit construction and equipment" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Manager form — Add/edit construction info and equipment per construction.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">5. Monitor image from workers onsite</h3>
+              <img src="Images/Screenshot%202026-03-08%20214005.png" alt="Create Report — BBTN/BBKD/GCN Word export" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Monitor image from workers onsite.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">6. View actual field data and images from site</h3>
+              <img src="Images/Screenshot%202026-03-08%20214021.png" alt="Export — Bulk Excel by month" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">View actual field data and images from site.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">7. View electrical measurement equipment data and photos from field</h3>
+              <img src="Images/Screenshot%202026-03-08%20213811.png" alt="Construction and equipment data grid" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">View electrical measurement equipment data and photos from field.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">8. Manage device data sent from the app</h3>
+              <img src="Images/Screenshot%202026-03-08%20214110.png" alt="Report and export workflow" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Manage device data sent from the app.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">9. Export report</h3>
+              <img src="Images/Screenshot%202026-03-08%20214101.png" alt="Export report — Word and Excel output" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Export report — Word (.docx) and Excel (.xlsx) report output.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">10. Project programming interface</h3>
+              <img src="Images/Screenshot%202026-03-08%20215515.png" alt="Excel export result" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Project programming interface.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">11. VS programming interface — project UI design</h3>
+              <img src="Images/Screenshot%202026-03-08%20215508.png" alt="Word report export result" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">VS programming interface — project UI design.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Back to portfolio -->
+      <section class="py-8 bg-neutral-50">
+        <div class="container mx-auto px-4 text-center">
+          <a href="../../portfolio.html" class="btn btn-primary">← Back to Portfolio</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script type="module" src="../../src/main.js"></script>
+  </body>
+</html>

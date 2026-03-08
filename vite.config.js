@@ -13,6 +13,8 @@ export default defineConfig({
         'Portfolio/SmartRetail/SmartRetail.html',
         'Portfolio/QRCodeScanMobile/QRCodeScanMobile.html',
         'Portfolio/AdelaideMetroRealtime/AdelaideMetroRealtime.html',
+        'Portfolio/BackEndAPICanthoEQ/BackEndAPICanthoEQ.html',
+        'Portfolio/DesktopAppCanthoEQ/DesktopAppCanthoEQ.html',
       ],
     },
   },
