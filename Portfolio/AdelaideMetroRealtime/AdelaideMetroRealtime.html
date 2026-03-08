@@ -15,7 +15,7 @@
           <a href="../../portfolio.html" class="text-primary hover:underline text-sm md:text-base mb-4 inline-block">← Portfolio</a>
           <h1 class="text-3xl md:text-4xl font-bold mb-3">Adelaide Metro Real-Time Data Mining Platform</h1>
           <p class="text-lg opacity-80 max-w-2xl mb-4">
-            Cloud Computing Project — A <strong>cloud-based data pipeline</strong> to collect, process, store, and analyse real-time public transport data from the <strong>Adelaide Metro API</strong>. Integrates Microsoft Azure and Node-RED for data ingestion, monitoring, reporting, and visualization.
+            Cloud Computing Project — A <strong>cloud-based data pipeline</strong> to collect, process, store, and analyse real-time public transport data from the <strong><a href="https://gtfs.adelaidemetro.com.au/" target="_blank" rel="noreferrer" class="text-primary hover:underline">Adelaide Metro API</a></strong> (GTFS). Integrates Microsoft Azure and Node-RED for data ingestion, monitoring, reporting, and visualization.
           </p>
           <p class="text-sm opacity-70"><strong>Context:</strong> Cloud and Distributed Computing course, Flinders University</p>
         </div>
@@ -28,12 +28,12 @@
           <h2 class="text-2xl font-bold mb-4">Description</h2>
           <p class="opacity-90 text-base md:text-lg leading-relaxed mb-6">
             This project was developed as part of a <strong>Cloud and Distributed Computing course at Flinders University</strong>.
-            The system designs and implements a <strong>cloud-based data pipeline</strong> to collect, process, store, and analyse real-time public transport data from the <strong>Adelaide Metro API</strong>.
+            The system designs and implements a <strong>cloud-based data pipeline</strong> to collect, process, store, and analyse real-time public transport data from the <strong><a href="https://gtfs.adelaidemetro.com.au/" target="_blank" rel="noreferrer" class="text-primary hover:underline">Adelaide Metro API</a></strong>.
           </p>
           <p class="opacity-90 text-base md:text-lg leading-relaxed mb-6">
             The solution integrates <strong>Microsoft Azure cloud services and Node-RED</strong> to automate data ingestion, monitoring, reporting, and visualization, allowing stakeholders to track vehicle locations and analyse transport operations in real time.
           </p>
-          <img src="Images_demo/Diagram-svg.png" alt="System architecture overview" class="w-full rounded-lg border border-neutral-200 shadow-md mb-4" loading="eager" />
+          <img src="Images_demo/Diagram.svg" alt="System architecture overview" class="w-full rounded-lg border border-neutral-200 shadow-md mb-4" loading="eager" />
           <p class="text-sm opacity-70 mb-6">Figure 1: System architecture overview</p>
           <div class="flex flex-wrap gap-4 justify-center">
             <a href="https://adelaidemetrorealtime.azurewebsites.net/" target="_blank" rel="noreferrer" class="btn btn-primary text-xl md:text-2xl py-5 px-10 md:py-6 md:px-12">Live system →</a>
@@ -67,7 +67,7 @@
         <div class="container mx-auto px-4 max-w-4xl">
           <h2 class="text-2xl font-bold mb-6">Key Features</h2>
           <ul class="list-disc list-inside space-y-2 opacity-90">
-            <li>Designed a <strong>cloud-based architecture</strong> to collect and process real-time vehicle data from the Adelaide Metro public API.</li>
+            <li>Designed a <strong>cloud-based architecture</strong> to collect and process real-time vehicle data from the <a href="https://gtfs.adelaidemetro.com.au/" target="_blank" rel="noreferrer" class="text-primary hover:underline">Adelaide Metro public API</a> (GTFS).</li>
             <li>Implemented <strong>serverless backend APIs using Azure Functions</strong> to retrieve, clean, and transform JSON transport data.</li>
             <li>Stored real-time and historical vehicle data using <strong>Azure Cosmos DB (NoSQL)</strong> for scalable and efficient data queries.</li>
             <li>Developed automated workflows using <strong>Node-RED</strong> to trigger data collection, monitoring, and reporting tasks.</li>
@@ -85,17 +85,26 @@
           <p class="opacity-90 mb-4">
             The system follows a distributed cloud architecture consisting of <strong>data ingestion, processing, storage, and analytics layers</strong>.
           </p>
+
+          <h3 class="text-xl font-semibold mb-3">Process flow</h3>
+          <p class="opacity-90 mb-3">Data moves through the pipeline as follows:</p>
+          <ol class="list-decimal list-inside space-y-2 opacity-90 mb-6">
+            <li><strong>Data ingestion</strong> — Raw vehicle and route data is pulled from the <strong><a href="https://gtfs.adelaidemetro.com.au/" target="_blank" rel="noreferrer" class="text-primary hover:underline">Adelaide Metro Real-Time API</a></strong> (GTFS/JSON).</li>
+            <li><strong>Processing layer</strong> — <strong>Azure Functions</strong> (serverless) run on a <strong>timer trigger</strong>, automatically every <strong>30 minutes</strong>, to fetch current vehicle and route data from the Metro API, then validate, clean, and transform the raw JSON before writing it to the database for storage.</li>
+            <li><strong>Storage layer</strong> — Processed data is written to <strong>Azure Cosmos DB</strong> (NoSQL) for real-time and historical queries, and to <strong>Azure Storage</strong> for backups or bulk assets as needed.</li>
+            <li><strong>Middleware</strong> — <strong>Node-RED</strong> workflows analyse the data stored in the database to discover <strong>insights</strong>, orchestrate monitoring and reporting, and trigger alert notifications when needed.</li>
+            <li><strong>Analytics & presentation</strong> — <strong>Tableau</strong> dashboards and <strong>Node-RED</strong> UI visualise the data; the public <strong>Azure App Service</strong> web app serves real-time vehicle locations and route information to end users.</li>
+          </ol>
+
           <p class="font-semibold mb-2">Key components:</p>
-          <ul class="list-disc list-inside space-y-1 opacity-90 mb-6">
-            <li><strong>Data Source:</strong> Adelaide Metro Real-time API</li>
+          <ul class="list-disc list-inside space-y-1 opacity-90">
+            <li><strong>Data Source:</strong> <a href="https://gtfs.adelaidemetro.com.au/" target="_blank" rel="noreferrer" class="text-primary hover:underline">Adelaide Metro Real-time API</a> (GTFS)</li>
             <li><strong>Processing Layer:</strong> Azure Functions</li>
             <li><strong>Storage Layer:</strong> Azure Cosmos DB and Azure Storage</li>
             <li><strong>Middleware:</strong> Node-RED automation workflows</li>
             <li><strong>Analytics Layer:</strong> Tableau dashboards</li>
             <li><strong>Web Interface:</strong> Azure App Service</li>
           </ul>
-          <img src="Images_demo/Overall-loud-services-3.png" alt="Overall cloud services" class="w-full rounded-lg border border-neutral-200 shadow-md mb-4" loading="lazy" />
-          <p class="text-sm opacity-70">Figure 2: Overall cloud services</p>
         </div>
       </section>
 
@@ -133,25 +142,31 @@
         </div>
       </section>
 
-      <!-- Example Implementation -->
+      <!-- Example Implementation / Screenshots -->
       <section class="py-12 border-b border-neutral-200">
         <div class="container mx-auto px-4 max-w-4xl">
-          <h2 class="text-2xl font-bold mb-8">Example Implementation</h2>
+          <h2 class="text-2xl font-bold mb-6">Backend API Development</h2>
+          <p class="opacity-90 mb-6">
+            Backend APIs were implemented using <strong>Azure Functions</strong> to retrieve and process real-time vehicle data from the <a href="https://gtfs.adelaidemetro.com.au/" target="_blank" rel="noreferrer" class="text-primary hover:underline">Adelaide Metro API</a>.
+          </p>
 
-          <div class="space-y-12">
+          <h3 class="text-xl font-semibold mb-4">Screenshots</h3>
+          <div class="space-y-8">
             <div>
-              <h3 class="text-xl font-semibold mb-2">Real-Time Data Storage using Azure Cosmos DB</h3>
-              <img src="Images_demo/27-20-AZURE-STORAGE-service-8.png" alt="Azure Storage / Cosmos DB" class="w-full rounded-lg border border-neutral-200 shadow-md mb-2" loading="lazy" />
-              <p class="text-sm opacity-70">Figure 5: Azure Storage / Cosmos DB</p>
+              <img src="Images_demo/Screenshot%202026-03-08%20091749.png" alt="Adelaide Metro Realtime — Azure Functions or API" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Azure Functions project or Metro API integration in the development environment.</p>
             </div>
-
             <div>
-              <h3 class="text-xl font-semibold mb-2">Backend API Development</h3>
-              <p class="opacity-90 mb-4">
-                Backend APIs were implemented using <strong>Azure Functions</strong> to retrieve and process real-time vehicle data from the Adelaide Metro API.
-              </p>
-              <img src="Images_demo/IDE-solve-the-api-from-adelaide-metro-2.png" alt="IDE – solving the Adelaide Metro API" class="w-full rounded-lg border border-neutral-200 shadow-md mb-2" loading="lazy" />
-              <p class="text-sm opacity-70">Figure 6: IDE – solving the Adelaide Metro API</p>
+              <img src="Images_demo/Screenshot%202026-03-08%20091804.png" alt="Adelaide Metro Realtime — Data or API response" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Data Mapping Opject class from the Adelaide Metro GTFS endpoint.</p>
+            </div>
+            <div>
+              <img src="Images_demo/Screenshot%202026-03-08%20091844.png" alt="Adelaide Metro Realtime — Storage or pipeline" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">Overview of the Services in Resource Group in the project on Azure Portal.</p>
+            </div>
+            <div>
+              <img src="Images_demo/Screenshot%202026-03-08%20091937.png" alt="Adelaide Metro Realtime — Dashboard or monitoring" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <p class="text-sm opacity-70 mt-2">The data is stored in Azure Cosmos DB.</p>
             </div>
           </div>
         </div>
@@ -170,6 +185,16 @@
             <li>Developing <strong>data visualization dashboards and monitoring tools</strong></li>
             <li>Using <strong>AI-driven prompting</strong> to create websites accurately and quickly</li>
           </ul>
+        </div>
+      </section>
+
+      <!-- Live system & Full project report (bottom) -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="https://adelaidemetrorealtime.azurewebsites.net/" target="_blank" rel="noreferrer" class="btn btn-primary text-xl md:text-2xl py-5 px-10 md:py-6 md:px-12">Live system →</a>
+            <a href="https://drive.google.com/file/d/1kN0DROYd-a_97whY_pe7ChuT7Te807mC/view?usp=sharing" target="_blank" rel="noreferrer" class="btn btn-outline border-2 border-blue-500 bg-transparent text-blue-600 hover:bg-blue-500 hover:text-white hover:border-blue-500 text-xl md:text-2xl py-5 px-10 md:py-6 md:px-12">Full project report (PDF)</a>
+          </div>
         </div>
       </section>
 

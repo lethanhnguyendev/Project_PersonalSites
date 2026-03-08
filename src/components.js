@@ -1,5 +1,5 @@
 export const PROFILE = {
-  name: 'Tom Nguyen',
+  name: 'Tom Website',
   role: 'Information Technology & Engineering Professional',
   location: 'Based in Australia',
   email: 'lethanhnguyen0706@gmail.com',
