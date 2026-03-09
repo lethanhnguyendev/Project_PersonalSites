@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electrical Testing Digital Transformation – Can Tho Power — Tom Website - Portfolio</title>
+  </head>
+  <body data-page="portfolio" class="page-container bg-white">
+    <div id="site-header"></div>
+
+    <main class="page-main">
+      <!-- Page header -->
+      <section class="min-h-[220px] py-16 bg-neutral-100 flex items-center">
+        <div class="container mx-auto px-4">
+          <a href="../portfolio.html" class="text-primary hover:underline text-sm md:text-base mb-4 inline-block">← Portfolio</a>
+          <h1 class="text-3xl md:text-4xl font-bold mb-3">
+            Electrical Testing Digital Transformation — Can Tho Power (System Overview)
+          </h1>
+          <p class="text-lg opacity-80 max-w-2xl mb-4">
+            End-to-end digital transformation platform for the electrical testing process at Can Tho Power Company — including backend APIs, desktop application, mobile app, and web portal built on Azure Cloud.
+          </p>
+        </div>
+      </section>
+
+      <!-- Over project -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Over Project</h2>
+          <p class="opacity-80 max-w-3xl mb-6 text-sm md:text-base">
+            This is an overall architecture view of a large system composed of multiple connected applications. The following projects describe each application in more detail.
+          </p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- RESTful API Backend – Electrical Equipment (Can Tho Power) -->
+            <a href="BackEndAPICanthoEQ.html" class="card bg-base-100 shadow-md border border-neutral-200 hover:shadow-lg hover:border-primary/30 transition-all">
+              <figure class="px-4 pt-4">
+                <img
+                  src="BackEndAPICanthoEQ/Untitled%20Diagram.drawio.png"
+                  alt="BackEnd API Can Tho EQ — System architecture"
+                  class="rounded-lg object-cover h-40 w-full"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="card-body">
+                <h3 class="card-title text-base md:text-lg">RESTful API Backend – Can Tho Power</h3>
+                <p class="opacity-80 text-xs md:text-sm">
+                  Serverless backend (Azure Functions) for electrical testing at Can Tho Power: constructions, equipment, tickets, file storage, document signing, SMS.
+                </p>
+                <span class="text-primary text-xs md:text-sm font-medium">View project →</span>
+              </div>
+            </a>
+
+            <!-- Electrical Equipment Information Management Desktop App -->
+            <a href="DesktopAppCanthoEQ.html" class="card bg-base-100 shadow-md border border-neutral-200 hover:shadow-lg hover:border-primary/30 transition-all">
+              <figure class="px-4 pt-4">
+                <img
+                  src="DesktopAppCanthoEQ/Screenshot%202026-03-08%20213751.png"
+                  alt="Electrical Equipment Management Desktop App — Login"
+                  class="rounded-lg object-cover h-40 w-full"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="card-body">
+                <h3 class="card-title text-base md:text-lg">Electrical Equipment Management Desktop</h3>
+                <p class="opacity-80 text-xs md:text-sm">
+                  Windows desktop app for managing constructions, equipment, test data and exporting Word/Excel reports connected to the backend.
+                </p>
+                <span class="text-primary text-xs md:text-sm font-medium">View project →</span>
+              </div>
+            </a>
+
+            <!-- Electrical Testing Mobile App – Can Tho Power -->
+            <a href="MobileAppCanthoEQ.html" class="card bg-base-100 shadow-md border border-neutral-200 hover:shadow-lg hover:border-primary/30 transition-all">
+              <figure class="px-4 pt-4">
+                <img
+                  src="MobileAppCanthoEQ/z5146436385087_da9e28db8617893620b41ca39838d567.jpg"
+                  alt="Electrical Testing Mobile App – Can Tho Power"
+                  class="rounded-lg object-cover h-40 w-full"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="card-body">
+                <h3 class="card-title text-base md:text-lg">Electrical Testing Mobile App</h3>
+                <p class="opacity-80 text-xs md:text-sm">
+                  Xamarin.Forms mobile app for field technicians to handle tickets, constructions, equipment, measurements and photos.
+                </p>
+                <span class="text-primary text-xs md:text-sm font-medium">View project →</span>
+              </div>
+            </a>
+
+            <!-- Electrical Testing Web Portal – Can Tho Power -->
+            <a href="WebAppCanthoEQ.html" class="card bg-base-100 shadow-md border border-neutral-200 hover:shadow-lg hover:border-primary/30 transition-all">
+              <figure class="px-4 pt-4">
+                <img
+                  src="WebAppCanthoEQ/Screenshot%202026-03-09%20191809.png"
+                  alt="Electrical Testing Web Portal – Can Tho Power"
+                  class="rounded-lg object-cover h-40 w-full"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="card-body">
+                <h3 class="card-title text-base md:text-lg">Electrical Testing Web Portal</h3>
+                <p class="opacity-80 text-xs md:text-sm">
+                  ASP.NET MVC web portal for office staff to review data, manage tickets, and export documents, integrated with the same backend.
+                </p>
+                <span class="text-primary text-xs md:text-sm font-medium">View project →</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- System architecture overview -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">System Architecture Overview</h2>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-4">
+            The system follows a <strong>multi-layered, cloud-native architecture</strong>. Internal authentication is handled by ASP.NET API and SQL Server, while domain data such as constructions, tickets, and equipment are processed through <strong>Azure Function Apps</strong> and stored in <strong>Cosmos DB</strong>. All applications (web, mobile, desktop) communicate with the backend using secure RESTful APIs. Files, images, and digital documents are stored in <strong>Azure Blob Storage</strong>, and SMS notifications are sent via Viettel AMS services.
+          </p>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-6">
+            This architecture allows the platform to scale with growing data volume, while keeping core business logic centralized and reusable across multiple client applications.
+          </p>
+          <div>
+            <img
+              src="CanthoEQ/Diagram.drawio.png"
+              alt="Electrical Testing Digital Transformation – Can Tho Power system architecture"
+              class="w-full rounded-lg border border-neutral-200 shadow-md"
+              loading="lazy"
+            />
+            <p class="text-sm opacity-70 mt-2">Figure: High-level architecture diagram of the Electrical Testing Digital Transformation system (Can Tho Power).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Back to portfolio -->
+      <section class="py-8 bg-neutral-50">
+        <div class="container mx-auto px-4 text-center">
+          <a href="../portfolio.html" class="btn btn-primary">← Back to Portfolio</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script type="module" src="../src/main.js"></script>
+  </body>
+</html>
+

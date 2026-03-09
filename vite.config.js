@@ -11,6 +11,7 @@ export default defineConfig({
         'ProfileCareer/software-eng.html',
         'ProfileCareer/engineering.html',
         'Portfolio/BackEndAPICanthoEQ.html',
+        'Portfolio/CanthoEQ.html',
         'Portfolio/DesktopAppCanthoEQ.html',
         'Portfolio/MobileAppCanthoEQ.html',
         'Portfolio/WebAppCanthoEQ.html',
