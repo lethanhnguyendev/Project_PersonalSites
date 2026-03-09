@@ -12,7 +12,7 @@
       <!-- Page header -->
       <section class="min-h-[220px] py-16 bg-neutral-100 flex items-center">
         <div class="container mx-auto px-4">
-          <a href="../../portfolio.html" class="text-primary hover:underline text-sm md:text-base mb-4 inline-block">← Portfolio</a>
+          <a href="../portfolio.html" class="text-primary hover:underline text-sm md:text-base mb-4 inline-block">← Portfolio</a>
           <h1 class="text-3xl md:text-4xl font-bold mb-3">RESTful API Backend – Electrical Equipment Information in Can Tho Power Company</h1>
           <p class="text-lg opacity-80 max-w-2xl mb-4">
             Serverless backend on <strong>Azure Functions</strong> for electrical testing process management at Can Tho Power Corporation (PCCT). Supports the full lifecycle: testing requests, construction & equipment management, file storage, document signing, and SMS notifications. Acts as the infrastructure platform layer for web, mobile, and partner integrations.
@@ -71,28 +71,28 @@
           <div class="space-y-8">
             <div>
               <h3 class="text-xl font-semibold mb-2">System architecture</h3>
-              <img src="Images/Untitled%20Diagram.drawio.png" alt="System architecture diagram" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <img src="BackEndAPICanthoEQ/Untitled%20Diagram.drawio.png" alt="System architecture diagram" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
               <p class="text-sm opacity-70 mt-2">Figure: System architecture overview</p>
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Development — Visual Studio</h3>
               <p class="opacity-90 mb-4">TicketService (CreateTicket, GetTicket, UpdateTicket) and Solution Explorer: CONGTRINH, TICKET, THIETBI, USER, FILE, KYSO, CUSTOMERS, Services.</p>
-              <img src="Images/Screenshot%202026-03-08%20193428.png" alt="Visual Studio — TicketService.cs and project structure" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <img src="BackEndAPICanthoEQ/Screenshot%202026-03-08%20193428.png" alt="Visual Studio — TicketService.cs and project structure" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
               <p class="text-sm opacity-70 mt-2">Figure: FunctionApp_ThiNghiemDienPCCT — TicketService and Solution Explorer</p>
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">API services on cloud</h3>
-              <img src="Images/Screenshot%202026-03-08%20210422.png" alt="Services stored on API cloud" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <img src="BackEndAPICanthoEQ/Screenshot%202026-03-08%20210422.png" alt="Services stored on API cloud" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
               <p class="text-sm opacity-70 mt-2">Figure: API services stored on cloud</p>
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Azure Storage — Image files</h3>
-              <img src="Images/Screenshot%202026-03-08%20210645.png" alt="Azure Storage stores image files from API" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <img src="BackEndAPICanthoEQ/Screenshot%202026-03-08%20210645.png" alt="Azure Storage stores image files from API" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
               <p class="text-sm opacity-70 mt-2">Figure: Azure Storage stores image files from API</p>
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Azure Function API — Services</h3>
-              <img src="Images/Screenshot%202026-03-08%20210728.png" alt="Services on Azure Function API" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
+              <img src="BackEndAPICanthoEQ/Screenshot%202026-03-08%20210728.png" alt="Services on Azure Function API" class="w-full rounded-lg border border-neutral-200 shadow-md" loading="lazy" />
               <p class="text-sm opacity-70 mt-2">Figure: Services on Azure Function API</p>
             </div>
           </div>
@@ -136,7 +136,7 @@
             <strong>Viettel SMS</strong>: Sends SMS notifications.
           </p>
           <div class="bg-neutral-100 rounded-lg p-6 border border-neutral-200 overflow-x-auto">
-            <pre class="text-sm whitespace-pre font-mono">┌─────────────────────┐     Bearer Token      ┌─────────────────────────────────┐
+          <pre class="text-sm whitespace-pre font-mono">┌─────────────────────┐     Bearer Token      ┌─────────────────────────────────┐
 │ ASP.NET API         │ ───────────────────▶  │ Azure Functions (large data)    │
 │ (Authentication &   │                        │ ConstructionAPI │ EquipmentAPI │ …
 │  Internal users)    │                        └─────────────────────────────────┘
@@ -190,12 +190,13 @@
       <!-- Back to portfolio -->
       <section class="py-8 bg-neutral-50">
         <div class="container mx-auto px-4 text-center">
-          <a href="../../portfolio.html" class="btn btn-primary">← Back to Portfolio</a>
+          <a href="../portfolio.html" class="btn btn-primary">← Back to Portfolio</a>
         </div>
       </section>
     </main>
 
     <div id="site-footer"></div>
-    <script type="module" src="../../src/main.js"></script>
+    <script type="module" src="../src/main.js"></script>
   </body>
 </html>
+

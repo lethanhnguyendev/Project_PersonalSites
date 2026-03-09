@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electrical Testing Web Portal – Can Tho Power — Tom Website - Portfolio</title>
+  </head>
+  <body data-page="portfolio" class="page-container bg-white">
+    <div id="site-header"></div>
+
+    <main class="page-main">
+      <!-- Page header -->
+      <section class="min-h-[220px] py-16 bg-neutral-100 flex items-center">
+        <div class="container mx-auto px-4">
+          <a href="../portfolio.html" class="text-primary hover:underline text-sm md:text-base mb-4 inline-block">← Portfolio</a>
+          <h1 class="text-3xl md:text-4xl font-bold mb-3">Electrical Testing Web Portal – Can Tho Power</h1>
+          <p class="text-lg opacity-80 max-w-2xl mb-4">
+            Internal <strong>web application</strong> for electrical testing staff and office users at Can Tho Power Corporation (PCCT) to manage constructions, electrical equipment, testing tickets, measurement data, and reports in a single browser-based
+            interface. Built with <strong>ASP.NET MVC</strong>, using <strong>Razor views</strong> and <strong>Bootstrap UI</strong>, and tightly integrated with the existing <strong>BackEndAPICanthoEQ</strong> backend and desktop/mobile clients.
+          </p>
+          <p class="text-sm opacity-70">
+            <strong>Context:</strong> Web client of the Electrical Testing Digital Transformation ecosystem (project WebAppCanthoEQ / WebApp_ThiNghiemDienCanThoMVC1012023) — complements the Desktop and Mobile apps by providing a centralized, browser-based
+            management portal.
+          </p>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">Overview</h2>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-4">
+            The <strong>Electrical Testing Web Portal – Can Tho Power (Web Project)</strong> is used by engineers, planners, and office staff to manage the full lifecycle of electrical testing work. From constructions and equipment master data to daily
+            testing tickets, measurement results, and document exports, everything is accessible via a secure web interface.
+          </p>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-4">
+            The web app follows the <strong>MVC pattern</strong> with <strong>strongly-typed Razor views</strong>, <strong>view models</strong>, and <strong>services</strong> that call the <strong>BackEndAPICanthoEQ</strong> RESTful APIs. It reuses the same
+            domain models as the Desktop and Mobile projects, ensuring consistent behavior and validations across the ecosystem.
+          </p>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-4">
+            Typical users work from the office to review data submitted from the Mobile Project, correct or complete measurement information, approve tickets, and export documents (Word/Excel) for customers and internal archives.
+          </p>
+          <p class="text-sm md:text-base opacity-80">
+            Public testing information portal: <a href="https://thinghiemdiencantho.vn/" target="_blank" rel="noopener noreferrer" class="link link-primary">https://thinghiemdiencantho.vn/</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Main Features -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Main Features</h2>
+          <div class="overflow-x-auto">
+            <table class="table table-zebra">
+              <thead>
+                <tr>
+                  <th>Module</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Authentication & Roles</strong></td>
+                  <td>
+                    Login using internal accounts with role-based access (admin, engineer, planner, viewer). Authentication is integrated with the same ASP.NET identity system used by BackEndAPICanthoEQ, sharing user and permission data across the
+                    ecosystem.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Constructions & Equipment Management</strong></td>
+                  <td>
+                    Web UI to search, view, and maintain <strong>constructions (CONGTRINH)</strong> and <strong>equipment (THIETBI)</strong>. Supports filtering by customer, location, voltage level, status, and more — all backed by Construction and Equipment
+                    APIs.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Testing Tickets Workflow</strong></td>
+                  <td>
+                    Manage electrical testing tickets from registration to completion. Office staff can create new tickets, assign to technicians, track progress, and reconcile data sent from the Mobile Project. Ticket states and audit data are stored in
+                    the centralized backend database.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Measurement Data Review</strong></td>
+                  <td>
+                    Review and edit measurement data uploaded from field staff. Tabular views and detail pages allow users to validate values, correct mistakes, and finalize test results before generating official documents.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Documents & Reporting</strong></td>
+                  <td>
+                    Generate <strong>Word/Excel reports</strong> for constructions, equipment, and testing sessions using predefined templates. Reports are consistent with the Desktop app, making it easy to archive, print, or send to customers.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Integration with BackEndAPICanthoEQ</strong></td>
+                  <td>
+                    All business data (constructions, equipment, tickets, measurements, files) is retrieved and updated via the <strong>BackEndAPICanthoEQ</strong> RESTful APIs. The web app acts as a front-end client that shares logic and configuration with
+                    other parts of the system.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Stack -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Technology Stack</h2>
+          <div class="overflow-x-auto">
+            <table class="table table-zebra">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Technology</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Framework</strong></td><td>ASP.NET MVC (on .NET Framework or .NET Core, depending on deployment)</td></tr>
+                <tr><td><strong>Frontend</strong></td><td>Bootstrap (layout & components), custom CSS, jQuery for light interactivity</td></tr>
+                <tr><td><strong>Backend Integration</strong></td><td>RESTful APIs from <strong>BackEndAPICanthoEQ</strong> (HTTP + JSON)</td></tr>
+                <tr><td><strong>Reporting</strong></td><td>Word/Excel generation via backend services (DocX / EPPlus, same as Desktop)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Structure -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Project Structure (Web Project)</h2>
+          <p class="opacity-90 mb-4">
+            The project is structured as a classic <strong>ASP.NET MVC</strong> application, separating concerns between controllers, views, models, and shared services.
+          </p>
+          <div class="bg-neutral-100 rounded-lg p-6 border border-neutral-200 overflow-x-auto">
+            <pre class="text-sm whitespace-pre font-mono">WebAppCanthoEQ/
+├── Controllers/       # HomeController, ConstructionController, EquipmentController, TicketController, ReportController
+├── Models/            # View models and DTOs for pages and forms
+├── Views/
+│   ├── Shared/        # _Layout.cshtml, partials, shared components
+│   ├── Home/          # Dashboard, summary pages
+│   ├── Construction/  # Index, Detail, Edit, Search pages
+│   ├── Equipment/     # Equipment list, detail, status pages
+│   ├── Ticket/        # Ticket list, assignment, approval, history
+│   └── Report/        # Report configuration and export screens
+├── Services/          # ApiClient, ConstructionService, EquipmentService, TicketService, ReportService
+├── Scripts/           # JavaScript, jQuery helpers
+├── Content/           # CSS, Bootstrap, images, icons
+└── Web.config         # Environment, routing, and IIS configuration</pre>
+          </div>
+          <p class="opacity-90 mt-4">
+            This layout keeps <strong>UI, business logic, and API integration</strong> clearly separated, making the web portal easy to evolve alongside the backend and other clients.
+          </p>
+        </div>
+      </section>
+
+      <!-- Screenshots -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-5xl">
+          <h2 class="text-2xl font-bold mb-6">Screenshots</h2>
+          <p class="opacity-90 mb-6">
+            Selected screens from the Electrical Testing Web Portal at Can Tho Power — showing dashboard, constructions and equipment views, ticket management, and reporting pages.
+          </p>
+          <div class="space-y-8">
+            <figure class="bg-neutral-100 rounded-lg border border-neutral-200 shadow-md p-3">
+              <img
+                src="WebAppCanthoEQ/Screenshot 2026-03-09 191809.png"
+                alt="Web portal dashboard and navigation"
+                class="w-full max-h-[520px] object-contain mx-auto"
+                loading="lazy"
+              />
+              <figcaption class="text-xs md:text-sm opacity-80 mt-2 text-center">
+                Main dashboard and navigation of the Electrical Testing Web Portal.
+              </figcaption>
+            </figure>
+            <figure class="bg-neutral-100 rounded-lg border border-neutral-200 shadow-md p-3">
+              <img
+                src="WebAppCanthoEQ/Screenshot 2026-03-09 191829.png"
+                alt="Web portal construction list and filters"
+                class="w-full max-h-[520px] object-contain mx-auto"
+                loading="lazy"
+              />
+              <figcaption class="text-xs md:text-sm opacity-80 mt-2 text-center">
+                Màn hình tìm kiếm và lọc danh sách công trình.
+              </figcaption>
+            </figure>
+            <figure class="bg-neutral-100 rounded-lg border border-neutral-200 shadow-md p-3">
+              <img
+                src="WebAppCanthoEQ/Screenshot 2026-03-09 191921.png"
+                alt="Web portal equipment list and details"
+                class="w-full max-h-[520px] object-contain mx-auto"
+                loading="lazy"
+              />
+              <figcaption class="text-xs md:text-sm opacity-80 mt-2 text-center">
+                List công trình hiển thị trên bản đồ (map) để dễ quan sát vị trí.
+              </figcaption>
+            </figure>
+            <figure class="bg-neutral-100 rounded-lg border border-neutral-200 shadow-md p-3">
+              <img
+                src="WebAppCanthoEQ/Screenshot 2026-03-09 191956.png"
+                alt="Web portal ticket management"
+                class="w-full max-h-[520px] object-contain mx-auto"
+                loading="lazy"
+              />
+              <figcaption class="text-xs md:text-sm opacity-80 mt-2 text-center">
+                Thông tin chi tiết công trình với bản đồ và các Equipment kèm theo.
+              </figcaption>
+            </figure>
+            <figure class="bg-neutral-100 rounded-lg border border-neutral-200 shadow-md p-3">
+              <img
+                src="WebAppCanthoEQ/Screenshot 2026-03-09 192015.png"
+                alt="Web portal measurement data review"
+                class="w-full max-h-[520px] object-contain mx-auto"
+                loading="lazy"
+              />
+              <figcaption class="text-xs md:text-sm opacity-80 mt-2 text-center">
+                Hình ảnh hiện trường và cảnh đính kèm công trình do công nhân chụp ngoài hiện trường.
+              </figcaption>
+            </figure>
+            <figure class="bg-neutral-100 rounded-lg border border-neutral-200 shadow-md p-3">
+              <img
+                src="WebAppCanthoEQ/Screenshot 2026-03-09 192116.png"
+                alt="Web portal reporting and exports"
+                class="w-full max-h-[520px] object-contain mx-auto"
+                loading="lazy"
+              />
+              <figcaption class="text-xs md:text-sm opacity-80 mt-2 text-center">
+                Ảnh chụp số liệu đo đạc từ thiết bị để lưu trữ và đối chiếu.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Back to portfolio -->
+      <section class="py-8 bg-neutral-50">
+        <div class="container mx-auto px-4 text-center">
+          <a href="../portfolio.html" class="btn btn-primary">← Back to Portfolio</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script type="module" src="../src/main.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electrical Testing Mobile App – Can Tho Power — Tom Website - Portfolio</title>
+  </head>
+  <body data-page="portfolio" class="page-container bg-white">
+    <div id="site-header"></div>
+
+    <main class="page-main">
+      <!-- Page header -->
+      <section class="min-h-[220px] py-16 bg-neutral-100 flex items-center">
+        <div class="container mx-auto px-4">
+          <a href="../portfolio.html" class="text-primary hover:underline text-sm md:text-base mb-4 inline-block">← Portfolio</a>
+          <h1 class="text-3xl md:text-4xl font-bold mb-3">Electrical Testing Mobile App – Can Tho Power</h1>
+          <p class="text-lg opacity-80 max-w-2xl mb-4">
+            Cross-platform <strong>mobile application</strong> for electrical testing staff at Can Tho Power Corporation (PCCT) to register tickets, capture measurement data and photos onsite, and synchronize everything to the
+            <strong>RESTful API Backend</strong> and <strong>Desktop App</strong>. Built with <strong>Xamarin.Forms</strong>, following the <strong>MVVM pattern</strong> and integrating tightly with the <strong>BackEndAPICanthoEQ</strong> system.
+          </p>
+          <p class="text-sm opacity-70">
+            <strong>Context:</strong> Mobile client of the Electrical Testing Digital Transformation ecosystem (Project <strong>MobileApp_ThiNghiemDienPCCT</strong>) — works together with the RESTful API Backend and the Desktop management app.
+          </p>
+          <div class="mt-6 max-w-md mx-auto">
+            <img
+              src="MobileAppCanthoEQ/z5146436385087_da9e28db8617893620b41ca39838d567.jpg"
+              alt="Mobile Project — main splash and navigation screen"
+              class="rounded-xl border border-neutral-200 shadow-md w-full md:max-w-sm object-contain bg-white mx-auto"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">Overview</h2>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-4">
+            The <strong>Electrical Testing Mobile App – Can Tho Power (Mobile Project)</strong> is designed for field technicians to work directly at construction sites. The app allows staff to
+            <strong>register testing tickets</strong>, <strong>view construction and equipment information</strong>, <strong>record measurement results</strong>, <strong>take photos</strong>, and then send all data securely to the
+            <strong>BackEndAPICanthoEQ</strong> system.
+          </p>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-4">
+            The application follows the <strong>MVVM (Model–View–ViewModel)</strong> pattern: all pages (Views) are bound to ViewModels which contain presentation logic and call shared Services to communicate with the backend API. This keeps the code
+            <strong>clean, testable, and easy to extend</strong> when adding new flows (new ticket types, more equipment groups, etc.).
+          </p>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed">
+            The mobile app is a <strong>core component</strong> in the PCCT testing ecosystem, closing the loop from customer ticket registration → field measurement and photo capture → backend processing → desktop report generation and official
+            Word/Excel exports.
+          </p>
+          <div class="mt-6">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.companyname.mobileapp_thinghiemdienpcct"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary btn-sm md:btn-md"
+            >
+              Download on Google Play
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Features -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Main Features</h2>
+          <div class="overflow-x-auto">
+            <table class="table table-zebra">
+              <thead>
+                <tr>
+                  <th>Module</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Authentication & User Profile</strong></td>
+                  <td>
+                    Login with employee ID and password against the ASP.NET authentication API used by <strong>BackEndAPICanthoEQ</strong>. Stores Bearer Token and basic staff profile locally and reuses it for all API calls. MVVM bindings validate
+                    input and show login errors directly on the View.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Ticket Management</strong></td>
+                  <td>
+                    View list of <strong>testing tickets (TICKET)</strong> assigned to the logged-in staff — including customer phone, address, request content, and status (PENDING, ACCEPTED, DONE). Technician can accept tickets, mark in-progress, and
+                    update basic information via <code>TicketService</code> on the backend.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Construction & Equipment</strong></td>
+                  <td>
+                    For each ticket, technicians can view linked <strong>Construction (CONGTRINH)</strong> data and its <strong>Equipment (THIETBI)</strong> list retrieved from <strong>ConstructionAPI</strong> and <strong>EquipmentAPI</strong>.
+                    Supports quick search, filtering, and detail view per equipment item.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Measurement Data Capture</strong></td>
+                  <td>
+                    Input of on-site measurement values for different equipment types (transformers, breakers, cables, meters, etc.) following the structure of <code>testDataList</code> in the backend. ViewModels validate required fields and only
+                    enable the “Save” button when data is complete.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Photo Capture & Attachment</strong></td>
+                  <td>
+                    Use the device camera to capture photos of equipment, connection points, and test setups. Images are uploaded to <strong>Azure Blob Storage</strong> through the backend <strong>FileService</strong> exposed in
+                    <strong>BackEndAPICanthoEQ</strong>, linked by constructionId / ticketId and available later in the Desktop app.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Offline-first & Sync</strong></td>
+                  <td>
+                    When network is unavailable, data is cached locally (JSON files or SQLite). A background sync process checks connectivity and sends pending measurements and photos to the backend once connection is restored, keeping technicians
+                    productive in the field.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Settings & Environment</strong></td>
+                  <td>
+                    Configuration screen to change API base URL (production / test), language (Vietnamese / English), and basic app settings. Also displays the currently connected backend version and last synchronization time with
+                    <strong>BackEndAPICanthoEQ</strong>.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Stack -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Technology Stack</h2>
+          <div class="overflow-x-auto">
+            <table class="table table-zebra">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Technology</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Framework</strong></td><td>Xamarin.Forms 5.0</td></tr>
+                <tr><td><strong>Pattern</strong></td><td>MVVM (Model–View–ViewModel), INotifyPropertyChanged, Command binding</td></tr>
+                <tr><td><strong>Language</strong></td><td>C# / .NET Standard 2.0</td></tr>
+                <tr><td><strong>HTTP Client</strong></td><td>System.Net.Http with <code>HttpClient</code>, authorization via Bearer Token</td></tr>
+                <tr><td><strong>Backend API</strong></td><td><strong>BackEndAPICanthoEQ</strong> — Azure Functions & ASP.NET RESTful API</td></tr>
+                <tr><td><strong>JSON</strong></td><td>Newtonsoft.Json</td></tr>
+                <tr><td><strong>Device APIs</strong></td><td>Xamarin.Essentials (Connectivity, Preferences, SecureStorage, Media)</td></tr>
+                <tr><td><strong>Local Storage</strong></td><td>SQLite / local JSON for offline cache and queue</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Structure -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Project Structure (Mobile Project)</h2>
+          <p class="opacity-90 mb-4">
+            The project is organized following the <strong>MVVM (Model–View–ViewModel)</strong> pattern and shared services.
+          </p>
+          <p class="opacity-90 mb-4">
+            <strong>Models</strong> describe domain data, <strong>ViewModels</strong> contain presentation logic and API calls, and <strong>Views</strong> (XAML pages) bind to ViewModels to display and edit data.
+          </p>
+          <div class="bg-neutral-100 rounded-lg p-6 border border-neutral-200 overflow-x-auto">
+          <pre class="text-sm whitespace-pre font-mono">MobileProject/
+├── Models/            # Ticket, Construction, Equipment, MeasurementData, User
+├── ViewModels/        # LoginViewModel, TicketListViewModel, ConstructionDetailViewModel, EquipmentFormViewModel, SettingsViewModel
+├── Views/             # LoginPage.xaml, TicketListPage.xaml, ConstructionDetailPage.xaml, EquipmentFormPage.xaml, SettingsPage.xaml
+├── Services/          # ApiClient, TicketService, ConstructionService, EquipmentService, FileService, AuthService, Config, ConnectivityService
+├── Resources/         # Styles, themes, localization (Vi/En)
+├── Helpers/           # BaseViewModel, validation helpers, mappers
+└── App.xaml.cs        # Navigation, dependency registration, startup logic</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screenshots -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Screenshots</h2>
+          <div id="screenshots-slider" class="max-w-2xl mx-auto">
+            <div class="card bg-base-100 shadow-lg border border-neutral-200">
+              <figure class="bg-neutral-100">
+                <img
+                  id="screenshot-image"
+                  src="MobileAppCanthoEQ/z5146436385087_da9e28db8617893620b41ca39838d567.jpg"
+                  alt="Mobile Project — Splash screen"
+                  class="max-h-[520px] w-auto mx-auto object-contain"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="card-body">
+                <h3 id="screenshot-title" class="card-title text-lg md:text-xl">Splash Screen</h3>
+                <p id="screenshot-description" class="text-sm md:text-base opacity-80">
+                  Splash screen of the Mobile Project application before user login.
+                </p>
+                <div class="card-actions justify-between items-center mt-4">
+                  <button id="screenshot-prev" class="btn btn-outline btn-sm md:btn-md">← Previous</button>
+                  <span id="screenshot-counter" class="text-xs md:text-sm opacity-70">1 / 7</span>
+                  <button id="screenshot-next" class="btn btn-primary btn-sm md:btn-md">Next →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-10 space-y-6">
+            <h3 class="text-xl font-semibold">Development Environment Screenshots</h3>
+            <p class="text-sm md:text-base opacity-80">
+              Illustration of the Mobile Project development process inside Visual Studio during implementation and debugging.
+            </p>
+            <div class="space-y-4">
+              <figure class="bg-neutral-100 rounded-lg border border-neutral-200 shadow-md p-3">
+                <img
+                  src="MobileAppCanthoEQ/Screenshot 2026-03-09 173008.png"
+                  alt="Development screenshot of Mobile Project in Visual Studio"
+                  class="w-full max-h-[520px] object-contain mx-auto"
+                  loading="lazy"
+                />
+                <figcaption class="text-xs md:text-sm opacity-80 mt-2 text-center">
+                  Illustration of the Mobile Project development process in Visual Studio.
+                </figcaption>
+              </figure>
+              <figure class="bg-neutral-100 rounded-lg border border-neutral-200 shadow-md p-3">
+                <img
+                  src="MobileAppCanthoEQ/Screenshot 2026-03-09 173409.png"
+                  alt="Development screenshot of Mobile Project in Visual Studio"
+                  class="w-full max-h-[520px] object-contain mx-auto"
+                  loading="lazy"
+                />
+                <figcaption class="text-xs md:text-sm opacity-80 mt-2 text-center">
+                  Illustration of the Mobile Project development process in Visual Studio.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Back to portfolio -->
+      <section class="py-8 bg-neutral-50">
+        <div class="container mx-auto px-4 text-center">
+          <div class="mb-4">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.companyname.mobileapp_thinghiemdienpcct"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline btn-primary btn-sm md:btn-md"
+            >
+              Download on Google Play
+            </a>
+          </div>
+          <a href="../portfolio.html" class="btn btn-primary">← Back to Portfolio</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script>
+      (function () {
+        const slides = [
+          {
+            title: 'Splash Screen',
+            src: 'MobileAppCanthoEQ/z5146436385087_da9e28db8617893620b41ca39838d567.jpg',
+            alt: 'Mobile Project — Splash screen',
+            description: 'Splash screen of the Mobile Project application before user login.',
+          },
+          {
+            title: 'Login Page',
+            src: 'MobileAppCanthoEQ/z5146436387803_cc14b7ae38fe7e67959eed65bcbc0938.jpg',
+            alt: 'Mobile Project — Login page',
+            description: 'Login page where technicians authenticate with employee credentials.',
+          },
+          {
+            title: 'View Construction & Electrical Equipment',
+            src: 'MobileAppCanthoEQ/z5146436386783_df5efc276650361609f0ccb831ca7419.jpg',
+            alt: 'Mobile Project — View construction and electrical equipment',
+            description: 'Screen showing construction information and electrical equipment linked to testing tickets.',
+          },
+          {
+            title: 'Input Data Page',
+            src: 'MobileAppCanthoEQ/1.jpg',
+            alt: 'Mobile Project — Input data page sample 1',
+            description: 'Input data page where technicians enter measurement values and related testing information.',
+          },
+          {
+            title: 'Input Data Page Variant',
+            src: 'MobileAppCanthoEQ/8.jpg',
+            alt: 'Mobile Project — Input data page sample 2',
+            description: 'Another input data screen variant for specific testing forms.',
+          },
+          {
+            title: 'Capture Pictures of Working & Equipment',
+            src: 'MobileAppCanthoEQ/4.jpg',
+            alt: 'Mobile Project — Capture picture of equipment 1',
+            description: 'Technicians capture pictures of electrical equipment directly from the field.',
+          },
+          {
+            title: 'Capture Pictures of Working & Equipment',
+            src: 'MobileAppCanthoEQ/6.jpg',
+            alt: 'Mobile Project — Capture picture of equipment 2',
+            description: 'Additional camera view used when documenting testing work.',
+          },
+          {
+            title: 'Capture Pictures of Working & Equipment',
+            src: 'MobileAppCanthoEQ/7.jpg',
+            alt: 'Mobile Project — Capture picture of equipment 3',
+            description: 'Another example of photos captured for testing reports and evidence.',
+          },
+          {
+            title: 'Additional Mobile Screen',
+            src: 'MobileAppCanthoEQ/5.jpg',
+            alt: 'Mobile Project — Additional screen 1',
+            description: 'Screen listing equipment items and their status for a selected construction.',
+          },
+          {
+            title: 'Construction Detail Screen',
+            src: 'MobileAppCanthoEQ/9.jpg',
+            alt: 'Mobile Project — Additional screen 2',
+            description: 'Construction detail screen showing key information about the work site.',
+          },
+          {
+            title: 'Equipment Information Screen',
+            src: 'MobileAppCanthoEQ/10.jpg',
+            alt: 'Mobile Project — Additional screen 3',
+            description: 'Screen for viewing equipment information stored in the backend system.',
+          },
+          {
+            title: 'Construction List Screen',
+            src: 'MobileAppCanthoEQ/11.jpg',
+            alt: 'Mobile Project — Additional screen 4',
+            description: 'Screen for browsing the latest list of constructions rather than ticket details.',
+          },
+          {
+            title: 'Field Testing Photo',
+            src: 'MobileAppCanthoEQ/z4218579221749_d3f65790e0fe3da3e1fd1e578221727e.jpg',
+            alt: 'Mobile Project — Field testing photo',
+            description: 'On-site photo from real electrical testing work using the Mobile Project system.',
+          },
+        ];
+
+        const imageEl = document.getElementById('screenshot-image');
+        const titleEl = document.getElementById('screenshot-title');
+        const descEl = document.getElementById('screenshot-description');
+        const counterEl = document.getElementById('screenshot-counter');
+        const prevBtn = document.getElementById('screenshot-prev');
+        const nextBtn = document.getElementById('screenshot-next');
+
+        if (!imageEl || !titleEl || !descEl || !counterEl || !prevBtn || !nextBtn) return;
+
+        let index = 0;
+
+        function renderSlide() {
+          const slide = slides[index];
+          imageEl.src = slide.src;
+          imageEl.alt = slide.alt;
+          titleEl.textContent = slide.title;
+          descEl.textContent = slide.description;
+          counterEl.textContent = index + 1 + ' / ' + slides.length;
+        }
+
+        prevBtn.addEventListener('click', function () {
+          index = (index - 1 + slides.length) % slides.length;
+          renderSlide();
+        });
+
+        nextBtn.addEventListener('click', function () {
+          index = (index + 1) % slides.length;
+          renderSlide();
+        });
+
+        renderSlide();
+      })();
+    </script>
+    <script type="module" src="../src/main.js"></script>
+  </body>
+</html>
+
