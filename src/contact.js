@@ -33,7 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function setStatus(text, type) {
       if (statusEl) {
         statusEl.textContent = text;
-        statusEl.className = 'mt-2 text-sm ' + (type === 'error' ? 'text-error' : type === 'success' ? 'text-success' : 'text-info');
+        const base = type === 'success' ? 'mt-2 text-base font-medium' : 'mt-2 text-sm';
+        const color = type === 'error' ? 'text-error' : type === 'success' ? 'text-success' : 'text-info';
+        statusEl.className = base + ' ' + color;
       } else {
         alert(text);
       }
@@ -66,21 +68,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.body.appendChild(hiddenForm);
 
-    // Google Apps Script usually returns a redirect or HTML; can't be read from iframe due to cross-origin
-    // Treat as success once the form has been submitted
+    const successMessage = 'Message sent successfully. I will contact you as soon as possible.';
+
     const onIframeLoad = () => {
       hiddenForm.remove();
-      setStatus('Message sent successfully. Thank you for reaching out!', 'success');
+      setStatus(successMessage, 'success');
       form.reset();
       iframe.removeEventListener('load', onIframeLoad);
     };
 
     iframe.addEventListener('load', onIframeLoad);
-    // Fallback: if iframe doesn't fire load in some environments, still show success after 3s
     setTimeout(() => {
       if (hiddenForm.parentNode) {
         hiddenForm.remove();
-        setStatus('Message sent successfully. Thank you for reaching out!', 'success');
+        setStatus(successMessage, 'success');
         form.reset();
       }
     }, 3000);
