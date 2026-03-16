@@ -1,7 +1,6 @@
 export const PROFILE = {
   name: 'Tom Website',
-  role: 'Information Technology & Engineering Professional',
-  location: 'Based in Australia',
+  location: 'Adelaide, South Australia',
   email: 'lethanhnguyen0706@gmail.com',
   phone: '+61 452 615 968',
   linkedin: 'https://www.linkedin.com/in/lethanh-nguyen',
@@ -94,7 +93,6 @@ export function getFooter() {
     <footer class="footer footer-center bg-neutral-100 text-neutral-700 p-8 mt-8">
       <aside>
         <p class="font-semibold text-base md:text-lg">${PROFILE.name}</p>
-        <p class="text-sm md:text-base opacity-80">${PROFILE.role}</p>
         <div class="flex flex-wrap justify-center gap-4 mt-3 text-sm md:text-base">
           ${PROFILE.location ? `<span>${PROFILE.location}</span>` : ''}
           ${PROFILE.email ? `<a href="mailto:${PROFILE.email}" class="link link-primary">${PROFILE.email}</a>` : ''}
