@@ -24,9 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = form.elements['email']?.value?.trim();
     const message = form.elements['message']?.value?.trim();
 
-    // Only require Name and Message, allow Phone / Email to be empty
+    // Require Name, Message, and at least one of Phone or Email
+    const hasContact = !!(phone || email);
     if (!name || !message) {
-      setStatus('Please enter at least your Name and Message.', 'error');
+      setStatus('Please enter your Name and Message.', 'error');
+      return;
+    }
+    if (!hasContact) {
+      setStatus('Please enter at least one of Phone or Email.', 'error');
       return;
     }
 
