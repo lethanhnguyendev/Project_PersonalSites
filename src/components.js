@@ -24,7 +24,39 @@ export const NAV_ITEMS = [
   { href: 'contact.html', label: 'Contact', id: 'contact' },
 ];
 
+function buildMobileNavList(currentPageId) {
+  return NAV_ITEMS.map((item) => {
+    if (item.children && item.children.length) {
+      const isOpen = item.children.some((child) => child.id === currentPageId);
+      return `
+        <li>
+          <details class="group" ${isOpen ? 'open' : ''}>
+            <summary class="${isOpen ? 'font-semibold text-primary' : ''}">${item.label}</summary>
+            <ul class="p-0 pl-2">
+              ${item.children
+                .map(
+                  (child) => `
+                <li>
+                  <a href="${BASE}${child.href}" class="${
+                    currentPageId === child.id ? 'active font-semibold' : ''
+                  }">${child.label}</a>
+                </li>
+              `,
+                )
+                .join('')}
+            </ul>
+          </details>
+        </li>`;
+    }
+    return `
+      <li>
+        <a href="${BASE}${item.href}" class="${currentPageId === item.id ? 'active font-semibold' : ''}">${item.label}</a>
+      </li>`;
+  }).join('');
+}
+
 export function getHeader(currentPageId = '') {
+  const mobileNavList = buildMobileNavList(currentPageId);
   return `
     <header class="navbar min-h-[72px] bg-white/90 backdrop-blur border-b border-neutral-200 sticky top-0 z-40">
       <div class="navbar-start">
@@ -48,14 +80,14 @@ export function getHeader(currentPageId = '') {
                     <summary class="${isActive ? 'font-semibold text-primary' : ''} text-sm md:text-base px-3">
                       ${item.label}
                     </summary>
-                    <ul class="bg-base-100 rounded-box shadow-md mt-2">
+                    <ul class="bg-base-100 rounded-box shadow-md mt-2 min-w-max">
                       ${item.children
                         .map(
                           (child) => `
                             <li>
                               <a href="${BASE}${child.href}" class="${
                                 currentPageId === child.id ? 'active font-semibold' : ''
-                              } text-sm md:text-base">
+                              } text-sm md:text-base whitespace-nowrap">
                                 ${child.label}
                               </a>
                             </li>
@@ -80,7 +112,20 @@ export function getHeader(currentPageId = '') {
           }).join('')}
         </ul>
       </div>
-      <div class="navbar-end">
+      <div class="navbar-end gap-1">
+        <div class="dropdown dropdown-end md:hidden">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle" aria-label="Open navigation menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="dropdown-content menu menu-sm z-[60] mt-3 w-56 rounded-box border border-neutral-200 bg-base-100 p-2 shadow-lg"
+          >
+            ${mobileNavList}
+          </ul>
+        </div>
         <a href="${BASE}contact.html" class="btn btn-primary btn-sm md:btn-md">Contact</a>
       </div>
     </header>

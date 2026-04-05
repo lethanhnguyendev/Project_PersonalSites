@@ -1,4 +1,30 @@
-const API_URL = 'https://script.google.com/macros/s/AKfycbxbuYWIwTx8fRMRNv--qc484v3FXxXjCLOo9yoXMnq8SnfpcfcykWjJebXVN2e8u_-MCw/exec';
+const API_URL =
+  'https://script.google.com/macros/s/AKfycbwWBVOHruF9r4I_rz9w94irSclWc_khPBa9ABCzg_Xn-heCUB62ouGHLCjDMVr7LAPPKA/exec';
+
+/**
+ * Requests current position. Returns `{ ok, location }` with `lat,lng` when successful; otherwise `location` is ''.
+ */
+function requestLocation() {
+  return new Promise((resolve) => {
+    if (!navigator.geolocation) {
+      resolve({ ok: false, location: '', reason: 'unsupported' });
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const { latitude, longitude } = pos.coords;
+        const lat = typeof latitude === 'number' ? latitude.toFixed(6) : String(latitude);
+        const lng = typeof longitude === 'number' ? longitude.toFixed(6) : String(longitude);
+        const location = `${lat},${lng}`;
+        resolve({ ok: true, location });
+      },
+      () => {
+        resolve({ ok: false, location: '', reason: 'error' });
+      },
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 0 },
+    );
+  });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
@@ -6,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!form) return;
 
-  // Hidden iframe to receive response from Google Apps Script (avoid CORS issues with fetch)
   let iframe = document.getElementById('contact-form-iframe');
   if (!iframe) {
     iframe = document.createElement('iframe');
@@ -16,7 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(iframe);
   }
 
-  form.addEventListener('submit', (e) => {
+  function setStatus(text, type) {
+    if (statusEl) {
+      statusEl.textContent = text;
+      const base = type === 'success' ? 'mt-2 text-base font-medium' : 'mt-2 text-sm';
+      const color =
+        type === 'error' ? 'text-error' : type === 'success' ? 'text-success' : 'text-info';
+      statusEl.className = base + ' ' + color;
+    } else {
+      alert(text);
+    }
+  }
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const name = form.elements['name']?.value?.trim();
@@ -24,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = form.elements['email']?.value?.trim();
     const message = form.elements['message']?.value?.trim();
 
-    // Require Name, Message, and at least one of Phone or Email
     const hasContact = !!(phone || email);
     if (!name || !message) {
       setStatus('Please enter your Name and Message.', 'error');
@@ -35,25 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    function setStatus(text, type) {
-      if (statusEl) {
-        statusEl.textContent = text;
-        const base = type === 'success' ? 'mt-2 text-base font-medium' : 'mt-2 text-sm';
-        const color = type === 'error' ? 'text-error' : type === 'success' ? 'text-success' : 'text-info';
-        statusEl.className = base + ' ' + color;
-      } else {
-        alert(text);
-      }
-    }
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+
+    const locResult = await requestLocation();
+    const location = locResult.ok && locResult.location ? locResult.location : '';
 
     setStatus('Sending, please wait...', 'info');
 
-    // Create a hidden form to POST to Google Apps Script (send via iframe to avoid CORS)
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('phone', phone);
-    formData.append('email', email);
-    formData.append('message', message);
+    const successMessage = 'Message sent successfully. I will contact you as soon as possible.';
 
     const hiddenForm = document.createElement('form');
     hiddenForm.method = 'POST';
@@ -61,37 +87,44 @@ document.addEventListener('DOMContentLoaded', () => {
     hiddenForm.target = 'contact-form-iframe';
     hiddenForm.style.display = 'none';
 
-    const names = ['name', 'phone', 'email', 'message'];
-    const values = [name, phone, email, message];
-    names.forEach((n, i) => {
+    const fields = [
+      ['name', name],
+      ['phone', phone],
+      ['email', email],
+      ['message', message],
+      ['location', location],
+    ];
+    fields.forEach(([n, v]) => {
       const input = document.createElement('input');
       input.type = 'hidden';
       input.name = n;
-      input.value = values[i];
+      input.value = v;
       hiddenForm.appendChild(input);
     });
 
     document.body.appendChild(hiddenForm);
 
-    const successMessage = 'Message sent successfully. I will contact you as soon as possible.';
+    const finish = () => {
+      if (hiddenForm.parentNode) hiddenForm.remove();
+      if (submitBtn) submitBtn.disabled = false;
+    };
 
     const onIframeLoad = () => {
-      hiddenForm.remove();
+      clearTimeout(fallbackTimer);
+      finish();
       setStatus(successMessage, 'success');
       form.reset();
       iframe.removeEventListener('load', onIframeLoad);
     };
 
     iframe.addEventListener('load', onIframeLoad);
-    setTimeout(() => {
-      if (hiddenForm.parentNode) {
-        hiddenForm.remove();
-        setStatus(successMessage, 'success');
-        form.reset();
-      }
+    const fallbackTimer = setTimeout(() => {
+      finish();
+      setStatus(successMessage, 'success');
+      form.reset();
+      iframe.removeEventListener('load', onIframeLoad);
     }, 3000);
 
     hiddenForm.submit();
   });
 });
-
