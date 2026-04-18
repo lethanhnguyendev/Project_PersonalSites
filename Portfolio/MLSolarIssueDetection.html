@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Machine Learning Model for Issues Detection in Solar Panels — Tom Website - Portfolio</title>
+  </head>
+  <body data-page="portfolio" class="page-container bg-white">
+    <div id="site-header"></div>
+
+    <main class="page-main">
+      <!-- Page header -->
+      <section class="min-h-[220px] py-16 bg-neutral-100 flex items-center">
+        <div class="container mx-auto px-4">
+          <a href="../portfolio.html" class="text-primary hover:underline text-sm md:text-base mb-4 inline-block">← Portfolio</a>
+          <h1 class="text-3xl md:text-4xl font-bold mb-3">
+            AI Machine Learning Model for Issues Detection in Solar Panels
+          </h1>
+          <p class="text-lg opacity-80 max-w-2xl mb-4">
+            Built an AI model to detect defects in solar panels from <strong>Electroluminescence (EL)</strong> processing during production-line quality inspection at <strong>Tindo Solar</strong>, South Australia.
+          </p>
+          <p class="text-lg opacity-80 max-w-2xl mb-4">
+            The model was built in <strong>Python</strong> using <strong>Ultralytics YOLOv11</strong>, <strong>Pillow</strong> for image handling, and <strong>Tkinter</strong> for the prototype user interface.
+          </p>
+          <p class="text-sm opacity-70"><strong>Context:</strong> Tindo Solar · Manufacturing quality inspection · Machine Learning · Ultralytics YOLO</p>
+          <p class="text-sm opacity-70 mb-2"><strong>Date:</strong> February 2026</p>
+        </div>
+      </section>
+
+      <!-- Introduction -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">Introduction</h2>
+          <img
+            src="MLSolarIssueDetection/TopBanner.png"
+            alt="Electroluminescence defect detection — project banner"
+            class="w-full rounded-lg border border-neutral-200 shadow-md mb-6"
+            loading="eager"
+          />
+
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-4">
+            While working at Tindo Solar as a machine operator from December 2025, I have proposed and had the opportunity to participate in a project focused on using AI to detect defects in solar panels using Electroluminescence (EL) images.
+          </p>
+
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-3">
+            What is EL? <strong>Electroluminescence (EL)</strong> is a non-destructive testing method in which an electrical current is applied to a solar panel, causing its cells to emit infrared light. This emission is captured by a specialised camera,
+            allowing internal defects to be identified even when they are not visible.
+          </p>
+
+          <p class="opacity-90 mb-2">EL imaging can reveal several types of defects, with the most common being:</p>
+          <ul class="list-disc list-inside space-y-2 opacity-90 mb-6">
+            <li><strong>Cracks</strong>: affecting performance and durability</li>
+            <li><strong>Soldering issues</strong>: disrupting electrical connections</li>
+            <li><strong>Scratches</strong>: degrading surface quality and efficiency</li>
+          </ul>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+            <img src="MLSolarIssueDetection/T1.png" alt="EL sample T1" class="w-full rounded-lg border border-neutral-200 shadow-sm" loading="lazy" />
+            <img src="MLSolarIssueDetection/T2.png" alt="EL sample T2" class="w-full rounded-lg border border-neutral-200 shadow-sm" loading="lazy" />
+            <img src="MLSolarIssueDetection/T3.png" alt="EL sample T3" class="w-full rounded-lg border border-neutral-200 shadow-sm" loading="lazy" />
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-2">
+            <img src="MLSolarIssueDetection/T4.png" alt="EL sample T4" class="w-full rounded-lg border border-neutral-200 shadow-sm" loading="lazy" />
+            <img src="MLSolarIssueDetection/T5.png" alt="EL sample T5" class="w-full rounded-lg border border-neutral-200 shadow-sm" loading="lazy" />
+            <img src="MLSolarIssueDetection/T6.png" alt="EL sample T6" class="w-full rounded-lg border border-neutral-200 shadow-sm" loading="lazy" />
+          </div>
+          <p class="text-sm opacity-70 mb-6">
+            Illustrations of issues found in scanned images from the Electroluminescence (EL) inspection process.
+          </p>
+
+
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-4">
+            In practice, the inspection process heavily relies on human observation, requiring technicians to analyse hundreds of images daily. This approach is time-consuming and prone to errors due to subjectivity and fatigue.
+          </p>
+
+          <img
+            src="MLSolarIssueDetection/1773278339661.png"
+            alt="Electroluminescence imaging context"
+            class="w-full rounded-lg border border-neutral-200 shadow-md mb-6"
+            loading="lazy"
+          />
+
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-4">
+            To address these limitations, a Machine Learning-based solution was proposed to automate defect detection from EL images. The goal is to develop a model capable of accurately and efficiently identifying defects, thereby reducing
+            inspection time, improving productivity, and supporting technicians in decision-making.
+          </p>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-6">
+            This project demonstrates the potential of applying artificial intelligence to enhance quality inspection processes in industrial environments.
+          </p>
+
+          <img
+            src="MLSolarIssueDetection/Screenshot%202026-03-07%20120639.png"
+            alt="EL inspection context — screenshot"
+            class="w-full rounded-lg border border-neutral-200 shadow-md"
+            loading="lazy"
+          />
+         </div>
+      </section>
+
+      <!-- System architecture -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">System Architecture and Implementation</h2>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-6">
+            The project is organized into two main phases: the training phase and the implementation phase, forming a complete pipeline from data preparation to real-world deployment.
+          </p>
+
+          <img
+            src="MLSolarIssueDetection/Overal%20Diagram.png"
+            alt="Overall diagram of training phase and implementation phase"
+            class="w-full rounded-lg border border-neutral-200 shadow-md mb-2"
+            loading="lazy"
+          />
+          <p class="text-sm opacity-70 mb-8">Overall diagram of training phase and implementation phase</p>
+
+          <h3 class="text-xl font-semibold mb-4">1. Training Phase</h3>
+          <p class="opacity-90 mb-4">The training phase focuses on preparing data and building the machine learning model:</p>
+
+          <img
+            src="MLSolarIssueDetection/Training%20Process.png"
+            alt="Training workflow from data to model training"
+            class="w-full rounded-lg border border-neutral-200 shadow-md mb-2"
+            loading="lazy"
+          />
+          <p class="text-sm opacity-70 mb-6">Training workflow: from data, labeling, and data augmentation to model training.</p>
+
+          <ul class="list-disc list-inside space-y-3 opacity-90 mb-8">
+            <li>
+              <strong>Data Acquisition &amp; Preprocessing</strong> — High-resolution EL images (e.g., 5336×10856 and 4796×2868 pixels) were captured from EL inspection machines. These images were divided into smaller patches of 640×640 pixels
+              to match model input requirements.
+            </li>
+            <li>
+              <strong>Data Annotation</strong> — Technicians manually reviewed images and identified defects. They also labeled images with locations of issues and a class (crack, soldering issue, scratch).
+            </li>
+            <li>
+              <strong>Data Augmentation</strong> — Techniques such as rotation (90°, 180°), flipping, and blurring were applied to improve dataset diversity and model generalization.
+            </li>
+            <li>
+              <strong>Dataset Splitting</strong> — The dataset was split into 80% training and 20% validation sets. A YAML file was created for configuration.
+            </li>
+            <li><strong>Model Training</strong> — The model was trained using YOLOv11 small version with Python, Visual Studio Code, and Google Colab.</li>
+          </ul>
+
+          <img
+            src="MLSolarIssueDetection/Screenshot%202026-02-28%20184850.png"
+            alt="Visual Studio Code — training"
+            class="w-full rounded-lg border border-neutral-200 shadow-md mb-2"
+            loading="lazy"
+          />
+          <p class="text-sm opacity-70 mb-6">Using Visual Studio Code for training process.</p>
+
+          <img
+            src="MLSolarIssueDetection/googlecolab_1.png"
+            alt="Google Colab — data in Google Drive"
+            class="w-full rounded-lg border border-neutral-200 shadow-md mb-2"
+            loading="lazy"
+          />
+          <p class="text-sm opacity-70 mb-4">Using Google Colab for training process: storing data in Google Drive.</p>
+
+          <img
+            src="MLSolarIssueDetection/googlecolab_2.png"
+            alt="Google Colab — model setup"
+            class="w-full rounded-lg border border-neutral-200 shadow-md mb-2"
+            loading="lazy"
+          />
+          <p class="text-sm opacity-70 mb-4">Using Google Colab for training process: Setup the model and configuration before training.</p>
+
+          <img
+            src="MLSolarIssueDetection/googlecolab_3.png"
+            alt="Google Colab — monitoring training"
+            class="w-full rounded-lg border border-neutral-200 shadow-md mb-2"
+            loading="lazy"
+          />
+          <p class="text-sm opacity-70 mb-6">Using Google Colab for training process: Monitoring training process.</p>
+
+          <p class="opacity-90 mb-4"><strong>Model Output</strong> — The trained model weights were saved locally for deployment.</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-2">
+            <img src="MLSolarIssueDetection/train_batch0.jpg" alt="Training batch 0" class="w-full rounded-lg border border-neutral-200 shadow-sm" loading="lazy" />
+            <img src="MLSolarIssueDetection/train_batch1.jpg" alt="Training batch 1" class="w-full rounded-lg border border-neutral-200 shadow-sm" loading="lazy" />
+            <img src="MLSolarIssueDetection/train_batch2.jpg" alt="Training batch 2" class="w-full rounded-lg border border-neutral-200 shadow-sm" loading="lazy" />
+          </div>
+          <p class="text-sm opacity-70 mb-2">Training Batches — Augmented image batches (Mosaic, flip, HSV) used for training.</p>
+        </div>
+      </section>
+
+      <!-- Implementation phase -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h3 class="text-xl font-semibold mb-4">2. Implementation Phase</h3>
+          <p class="opacity-90 mb-4">This phase focuses on deploying the trained model into the production environment:</p>
+
+          <h4 class="font-semibold mb-3">API Development</h4>
+          <img
+            src="MLSolarIssueDetection/Implement%20Process.png"
+            alt="API pipeline — patches, inference, JSON"
+            class="w-full rounded-lg border border-neutral-200 shadow-md mb-2"
+            loading="lazy"
+          />
+          <p class="text-sm opacity-70 mb-6">API pipeline: split images into patches, run model inference, return JSON results.</p>
+
+          <ol class="list-decimal list-inside space-y-2 opacity-90 mb-6">
+            <li>Input images are split into 640×640 patches and stored in memory using Pillow library for image reading, cropping, drawing bounding boxes</li>
+            <li>The trained model detects defects on each patch</li>
+            <li>Results are returned in JSON format (bounding box + class + confidence)</li>
+          </ol>
+
+          <ul class="list-disc list-inside space-y-2 opacity-90">
+            <li><strong>Visualization</strong> — Detected defects are displayed by drawing bounding boxes and labels on the original image.</li>
+            <li><strong>System Integration</strong> — The API is integrated into the production line. Each EL scan automatically triggers defect detection.</li>
+            <li><strong>Human-in-the-loop Verification</strong> — The AI system supports technicians, who still perform manual verification.</li>
+            <li><strong>Continuous Improvement</strong> — New or misclassified samples are stored for future retraining to improve the model.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Demo videos -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Prototype — Video Demos</h2>
+ 
+
+          <div class="space-y-10">
+            <div>
+              <p class="text-base md:text-lg font-bold opacity-90 mb-3">Part 1</p>
+              <div class="aspect-video w-full rounded-lg overflow-hidden border border-neutral-200 shadow-md bg-neutral-100">
+                <iframe
+                  src="https://www.youtube.com/embed/Hc9porv3HWE"
+                  title="EL defect detection — demo part 1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  class="w-full h-full"
+                ></iframe>
+              </div>
+              <p class="text-center mt-2">
+                <a href="https://www.youtube.com/watch?v=Hc9porv3HWE" target="_blank" rel="noreferrer" class="text-primary hover:underline text-sm">Open in YouTube →</a>
+              </p>
+            </div>
+            <div>
+              <p class="text-base md:text-lg font-bold opacity-90 mb-3">Part 2</p>
+              <div class="aspect-video w-full rounded-lg overflow-hidden border border-neutral-200 shadow-md bg-neutral-100">
+                <iframe
+                  src="https://www.youtube.com/embed/0seR3bU4ErQ"
+                  title="EL defect detection — demo part 2"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  class="w-full h-full"
+                ></iframe>
+              </div>
+              <p class="text-center mt-2">
+                <a href="https://www.youtube.com/watch?v=0seR3bU4ErQ" target="_blank" rel="noreferrer" class="text-primary hover:underline text-sm">Open in YouTube →</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Application interface -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-6">Application Interface</h2>
+
+          <img
+            src="MLSolarIssueDetection/Screenshot%202026-03-07%20120639.png"
+            alt="GUI for defect detection"
+            class="w-full rounded-lg border border-neutral-200 shadow-md mb-2"
+            loading="lazy"
+          />
+          <p class="text-sm opacity-70 mb-8">Graphic User interface for detecting.</p>
+
+          <div class="grid md:grid-cols-2 gap-4 mb-2">
+            <img
+              src="MLSolarIssueDetection/Screenshot%202026-04-18%20171401.png"
+              alt="GUI — confidence and results"
+              class="w-full rounded-lg border border-neutral-200 shadow-md"
+              loading="lazy"
+            />
+            <img
+              src="MLSolarIssueDetection/Screenshot%202026-04-18%20171348.png"
+              alt="GUI — confidence adjustment"
+              class="w-full rounded-lg border border-neutral-200 shadow-md"
+              loading="lazy"
+            />
+          </div>
+          <p class="text-sm opacity-70 mb-8">Graphic User interface: changing confidence value and results.</p>
+
+          <img
+            src="MLSolarIssueDetection/Screenshot%202026-03-07%20121237.png"
+            alt="V Scratch issue detected"
+            class="w-full rounded-lg border border-neutral-200 shadow-md mb-2"
+            loading="lazy"
+          />
+          <p class="text-sm opacity-70 mb-6">V Scratch issue was detected</p>
+
+          <img
+            src="MLSolarIssueDetection/Screenshot%202026-03-07%20121431.png"
+            alt="Single Scratch issue detected"
+            class="w-full rounded-lg border border-neutral-200 shadow-md mb-2"
+            loading="lazy"
+          />
+          <p class="text-sm opacity-70 mb-8">Single Scratch issue was detected</p>
+
+          <div class="space-y-8">
+            <div>
+              <img src="MLSolarIssueDetection/1.png" alt="Solder issues marked red" class="w-full rounded-lg border border-neutral-200 shadow-md mb-2" loading="lazy" />
+              <p class="text-sm opacity-70">Solder issues was detected and marked by red rectangle</p>
+            </div>
+            <div>
+              <img src="MLSolarIssueDetection/2.png" alt="Scratch issues marked blue" class="w-full rounded-lg border border-neutral-200 shadow-md mb-2" loading="lazy" />
+              <p class="text-sm opacity-70">Scratch issues was detected and marked by blue rectangle</p>
+            </div>
+            <div>
+              <img src="MLSolarIssueDetection/3.png" alt="Issues detected by trained model" class="w-full rounded-lg border border-neutral-200 shadow-md mb-2" loading="lazy" />
+              <p class="text-sm opacity-70">Issues were detected and marked through the trained model</p>
+            </div>
+            <div>
+              <img src="MLSolarIssueDetection/4.png" alt="Different issues red and blue" class="w-full rounded-lg border border-neutral-200 shadow-md mb-2" loading="lazy" />
+              <p class="text-sm opacity-70">Different issues were detected as red and blue color</p>
+            </div>
+            <div>
+              <img src="MLSolarIssueDetection/5.png" alt="Confidence 0.85" class="w-full rounded-lg border border-neutral-200 shadow-md mb-2" loading="lazy" />
+              <p class="text-sm opacity-70">The confidence 0.85 which is more accuracy</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conclusion -->
+      <section class="py-12 border-b border-neutral-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-2xl font-bold mb-4">Conclusion</h2>
+          <img
+            src="MLSolarIssueDetection/together.png"
+            alt="Illustrative photograph — not part of the EL detection project"
+            class="w-full rounded-lg border border-neutral-200 shadow-md mb-2"
+            loading="lazy"
+          />
+          <p class="text-sm opacity-70 mb-6">Me and my colleagues in factory. (for illustration only — not related to the project).</p>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed mb-4">
+            The project has successfully achieved initial results in detecting common defects in solar panels using EL images. We also developed a basic graphic UI to evaluate model performance by adjusting confidence thresholds ranging from
+            0.5 to 0.9 for analysis. The results demonstrate the feasibility of applying machine learning to support defect inspection in production.
+          </p>
+          <p class="opacity-90 text-base md:text-lg leading-relaxed">
+            The project is still ongoing, with further improvements expected in terms of accuracy, robustness, and real-world integration. Future work will focus on enhancing the model and expanding the dataset to achieve better performance and
+            reliability.
+          </p>
+        </div>
+      </section>
+
+      <!-- Back to portfolio -->
+      <section class="py-8 bg-neutral-50">
+        <div class="container mx-auto px-4 text-center">
+          <a href="../portfolio.html" class="btn btn-primary">← Back to Portfolio</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script type="module" src="../src/main.js"></script>
+  </body>
+</html>
