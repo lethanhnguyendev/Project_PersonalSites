@@ -18,6 +18,7 @@ export default defineConfig({
         'Portfolio/SmartRetail.html',
         'Portfolio/QRCodeScanMobile.html',
         'Portfolio/AdelaideMetroRealtime.html',
+        'Portfolio/MLSolarIssueDetection.html',
       ],
     },
   },
